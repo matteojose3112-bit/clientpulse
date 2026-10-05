@@ -6,6 +6,34 @@ ClientPulse is actively developing, so this changelog records the progression fr
 
 ---
 
+## [0.2.0] — Dashboard & Health Intelligence
+
+### Added
+
+* Added Aster-inspired visual foundation while keeping ClientPulse focused on its own product identity
+* Added responsive dashboard structure
+* Added reusable MetricCard component
+* Added reusable CustomerCard component
+* Added Recent Activity feed
+* Added customer numeric health scores
+* Added health-score progress visualization
+* Added automatic score updates when customer health status changes
+* Added live Portfolio Health metric based on customer health scores
+* Added live customer counts for Total, Healthy, At Risk, and Critical accounts
+
+### Improved
+
+* Replaced static customer cards with reusable data-driven customer components
+* Connected overview metrics to live application state
+* Connected customer health controls to the customer data model
+* Kept the MVP frontend-only and intentionally avoided unnecessary backend complexity
+
+### Development
+
+The project continues to follow the minimum-functional approach: build a useful feature, understand it, test it, and only then add another layer of complexity.
+
+---
+
 ## [0.1.0] — Initial MVP Foundation
 
 ### Added
@@ -39,10 +67,4 @@ The initial objective is to build a minimum functional application first, unders
 
 ### Next
 
-The next development stage will focus on turning customer health tracking into a basic customer-success workflow through:
-
-* Customer detail views
-* Search and filtering
-* Follow-up tasks
-* Task status
-* Persistent local data
+The next development stage will focus on customer-success workflow and risk intelligence, while keeping the application simple and functional.
