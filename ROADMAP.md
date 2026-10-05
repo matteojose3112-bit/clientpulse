@@ -8,7 +8,7 @@ The roadmap focuses on building a functional foundation first, then progressivel
 
 ## 🟢 Phase 1 — Functional Foundation
 
-**Status: In Progress**
+**Status: Complete**
 
 * [x] Create GitHub repository
 * [x] Set up React + TypeScript + Vite
@@ -20,7 +20,12 @@ The roadmap focuses on building a functional foundation first, then progressivel
 * [x] Add customer health statuses
 * [x] Add interactive health updates
 * [x] Calculate customer-health metrics
-* [ ] Improve visual design
+* [x] Establish Aster-inspired visual foundation
+* [x] Add responsive dashboard sections
+* [x] Add reusable metric and customer components
+* [x] Add recent activity feed
+* [x] Add basic numeric health scores
+* [x] Add portfolio health calculation
 * [ ] Add persistent local storage
 
 ---
@@ -42,9 +47,9 @@ The roadmap focuses on building a functional foundation first, then progressivel
 
 ## 🟣 Phase 3 — Health & Risk Intelligence
 
-**Status: Planned**
+**Status: In Progress**
 
-* [ ] Customer health scoring
+* [x] Basic customer health scoring
 * [ ] Health-score factors
 * [ ] Risk indicators
 * [ ] Inactivity detection
@@ -103,7 +108,7 @@ ClientPulse should evolve from a simple customer-health tracker into a practical
 
 The long-term direction is:
 
-```text
+```
 Customer Data
       ↓
 Health & Activity
