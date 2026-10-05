@@ -10,7 +10,7 @@ The project is being developed incrementally, starting with a functional fronten
 
 **MVP — In Development**
 
-The current version includes a functional customer data model, customer health tracking, health updates, and automatically calculated customer-health metrics.
+The current version includes a functional customer data model, editable customer health, numeric health scores, live portfolio metrics, and a recent-activity feed.
 
 ## Current Features
 
@@ -18,21 +18,28 @@ The current version includes a functional customer data model, customer health t
 * Customer information cards
 * Customer health statuses
 * Interactive health status updates
+* Numeric customer health scores
+* Health-score progress visualization
 * Automatic customer-health metrics
+* Portfolio health metric
+* Recent customer-operations activity feed
 * Responsive card-based interface
+* Reusable React components
 * TypeScript data modeling
 * React state management
+* Functional frontend interactions
 
 ## Planned Features
 
 Future versions may introduce:
 
 * Customer detail views
+* Customer search and filtering
 * Follow-up task management
 * Onboarding milestones
-* Health-score calculations
+* More advanced health-score factors
 * Risk indicators
-* Customer activity tracking
+* Customer activity history
 * API integrations
 * Webhooks
 * CRM integrations
@@ -86,15 +93,14 @@ The project follows:
 
 ## Roadmap
 
-See [`ROADMAP.md`](ROADMAP.md) for the current development plan.
+See [ROADMAP.md](ROADMAP.md) for the current development plan.
 
 ## Changelog
 
-See [`CHANGELOG.md`](CHANGELOG.md) for completed changes and milestones.
+See [CHANGELOG.md](CHANGELOG.md) for completed changes and milestones.
 
 ## Author
 
 **Matteo Jose**
 
 Building software through hands-on learning, experimentation, and AI-assisted development.
-g.
