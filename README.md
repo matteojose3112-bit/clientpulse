@@ -8,9 +8,11 @@ The project is being developed incrementally, starting with a functional fronten
 
 ## Current Status
 
-**Functional Frontend MVP — Ready for Deployment**
+**Functional Frontend MVP — Live on GitHub Pages**
 
-The current version includes a functional customer data model, editable customer health, numeric health scores, live portfolio metrics, search and filtering, risk summaries, recent activity, and browser persistence through local storage.
+ClientPulse is now a deployed, functional frontend MVP. The current version includes a customer data model, editable customer health, numeric health scores, live portfolio metrics, search and filtering, risk summaries, recent activity, browser persistence, and GitHub Pages deployment.
+
+**Live application:** https://matteojose3112-bit.github.io/clientpulse/
 
 ## Current Features
 
@@ -33,6 +35,8 @@ The current version includes a functional customer data model, editable customer
 * TypeScript data modeling
 * React state management
 * Functional frontend interactions
+* Production build configuration
+* GitHub Pages deployment
 
 ## Tech Stack
 
@@ -42,6 +46,8 @@ The current version includes a functional customer data model, editable customer
 * Tailwind CSS
 * Git
 * GitHub
+* GitHub Pages
+* gh-pages
 
 Additional technologies such as APIs, databases, Python, SQL, automation platforms, and analytics tools may be introduced as the project evolves.
 
@@ -62,6 +68,7 @@ The goal is to learn by building a progressively more capable customer-success a
 * Analytics
 * Software architecture
 * Git and GitHub workflows
+* Deployment
 
 ## Development Approach
 
