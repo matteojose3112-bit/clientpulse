@@ -6,6 +6,34 @@ ClientPulse is actively developing, so this changelog records the progression fr
 
 ---
 
+## [0.3.0] — Functional MVP Polish
+
+### Added
+
+* Added customer search by name and company
+* Added health-status filtering
+* Added empty-state handling with filter reset
+* Added persistent customer state using browser local storage
+* Added RiskSummary component
+* Added recent ActivityFeed component
+* Added live portfolio health calculation
+* Added live customer health counts
+* Added automatic health-score recalculation when health status changes
+
+### Improved
+
+* Connected customer cards, filters, risk intelligence, activity, and overview metrics to the same application state
+* Improved the customer section from a static display into an interactive operational workspace
+* Preserved the intentionally frontend-only architecture for the MVP
+* Maintained the Aster-inspired visual foundation without copying Aster's interaction effects
+
+### Deployment
+
+* ClientPulse is ready for production frontend deployment.
+* The GitHub repository is public and will serve as the project's source of truth.
+
+---
+
 ## [0.2.0] — Dashboard & Health Intelligence
 
 ### Added
@@ -28,10 +56,6 @@ ClientPulse is actively developing, so this changelog records the progression fr
 * Connected customer health controls to the customer data model
 * Kept the MVP frontend-only and intentionally avoided unnecessary backend complexity
 
-### Development
-
-The project continues to follow the minimum-functional approach: build a useful feature, understand it, test it, and only then add another layer of complexity.
-
 ---
 
 ## [0.1.0] — Initial MVP Foundation
@@ -46,25 +70,19 @@ The project continues to follow the minimum-functional approach: build a useful 
 * Added sample customer records
 * Added customer information display
 * Added customer health statuses:
-
   * Healthy
   * At Risk
   * Critical
 * Added interactive health-status updates
-* Added automatically calculated customer metrics:
-
-  * Total Customers
-  * Healthy
-  * At Risk
-  * Critical
+* Added automatically calculated customer metrics
 * Added initial responsive card-based interface
 
 ### Development
 
 ClientPulse was started as a hands-on learning project using AI as a development and learning partner.
 
-The initial objective is to build a minimum functional application first, understand how each part works, and progressively introduce more advanced functionality.
+The initial objective was to build a minimum functional application first, understand how each part works, and progressively introduce more advanced functionality.
 
 ### Next
 
-The next development stage will focus on customer-success workflow and risk intelligence, while keeping the application simple and functional.
+The next development stage will focus on deeper customer-success workflow and risk intelligence, followed by integrations and automation.
