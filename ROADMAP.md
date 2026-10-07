@@ -2,7 +2,7 @@
 
 ClientPulse is an evolving customer-success operations platform.
 
-The roadmap focuses on building a functional foundation first, then progressively introducing more advanced data, automation, integrations, and analytics.
+The roadmap focuses on building a functional foundation first, then progressively introducing more advanced customer workflows, risk intelligence, data integrations, automation, and analytics.
 
 ---
 
@@ -31,6 +31,8 @@ The roadmap focuses on building a functional foundation first, then progressivel
 * [x] Add customer health filtering
 * [x] Add risk summary
 * [x] Add empty-state handling
+* [x] Configure production build
+* [x] Deploy MVP to GitHub Pages
 
 ---
 
@@ -46,6 +48,7 @@ The roadmap focuses on building a functional foundation first, then progressivel
 * [ ] Onboarding milestones
 * [ ] Customer notes
 * [ ] Account ownership
+* [ ] Basic task prioritization
 
 ---
 
@@ -75,6 +78,7 @@ The roadmap focuses on building a functional foundation first, then progressivel
 * [ ] Webhooks
 * [ ] Data synchronization
 * [ ] Structured backend
+* [ ] Authentication and user accounts
 
 ---
 
