@@ -2,53 +2,37 @@
 
 A customer success operations platform built through hands-on software development and AI-assisted learning.
 
-ClientPulse is designed to help customer-success teams monitor customer health, identify accounts requiring attention, and manage follow-up actions from a centralized operational view.
+ClientPulse helps customer-success teams monitor customer health, identify accounts requiring attention, and manage follow-up actions from a centralized operational view.
 
 The project is being developed incrementally, starting with a functional frontend MVP and expanding toward integrations, automation, analytics, and more advanced customer-success workflows.
 
 ## Current Status
 
-**MVP — In Development**
+**Functional Frontend MVP — Ready for Deployment**
 
-The current version includes a functional customer data model, editable customer health, numeric health scores, live portfolio metrics, and a recent-activity feed.
+The current version includes a functional customer data model, editable customer health, numeric health scores, live portfolio metrics, search and filtering, risk summaries, recent activity, and browser persistence through local storage.
 
 ## Current Features
 
-* Customer list
-* Customer information cards
-* Customer health statuses
-* Interactive health status updates
+* Customer list and reusable customer cards
+* Customer information and health statuses
+* Interactive health-status updates
 * Numeric customer health scores
 * Health-score progress visualization
-* Automatic customer-health metrics
-* Portfolio health metric
+* Automatic health-score updates when status changes
+* Live portfolio health calculation
+* Live customer counts for Total, Healthy, At Risk, and Critical accounts
+* Customer search by name or company
+* Customer filtering by health status
+* Empty-state handling and filter reset
+* Risk summary
 * Recent customer-operations activity feed
+* Local storage persistence across browser refreshes
 * Responsive card-based interface
 * Reusable React components
 * TypeScript data modeling
 * React state management
 * Functional frontend interactions
-
-## Planned Features
-
-Future versions may introduce:
-
-* Customer detail views
-* Customer search and filtering
-* Follow-up task management
-* Onboarding milestones
-* More advanced health-score factors
-* Risk indicators
-* Customer activity history
-* API integrations
-* Webhooks
-* CRM integrations
-* Automated workflows
-* Retention and renewal reporting
-* Data visualization
-* Persistent database storage
-
-Features will be added as they are actually designed, built, tested, and understood.
 
 ## Tech Stack
 
