@@ -24,30 +24,34 @@ The roadmap focuses on building a functional foundation first, then progressivel
 * [x] Add responsive dashboard sections
 * [x] Add reusable metric and customer components
 * [x] Add recent activity feed
-* [x] Add basic numeric health scores
+* [x] Add numeric health scores
 * [x] Add portfolio health calculation
-* [ ] Add persistent local storage
+* [x] Add persistent local storage
+* [x] Add customer search
+* [x] Add customer health filtering
+* [x] Add risk summary
+* [x] Add empty-state handling
 
 ---
 
 ## 🔵 Phase 2 — Customer Success Workflow
 
-**Status: Planned**
+**Status: Next**
 
 * [ ] Customer detail view
-* [ ] Customer search
-* [ ] Customer filtering
 * [ ] Follow-up tasks
 * [ ] Task completion
 * [ ] Due dates
 * [ ] Customer activity history
 * [ ] Onboarding milestones
+* [ ] Customer notes
+* [ ] Account ownership
 
 ---
 
 ## 🟣 Phase 3 — Health & Risk Intelligence
 
-**Status: In Progress**
+**Status: Planned**
 
 * [x] Basic customer health scoring
 * [ ] Health-score factors
@@ -56,6 +60,7 @@ The roadmap focuses on building a functional foundation first, then progressivel
 * [ ] Escalation conditions
 * [ ] Renewal-risk tracking
 * [ ] Customer segmentation
+* [ ] Risk trend history
 
 ---
 
