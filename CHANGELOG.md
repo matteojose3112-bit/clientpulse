@@ -6,6 +6,30 @@ ClientPulse is actively developing, so this changelog records the progression fr
 
 ---
 
+## [0.4.0] — Deployment & MVP Release
+
+### Added
+
+* Added GitHub Pages production deployment
+* Added `gh-pages` deployment workflow
+* Added Vite base-path configuration for the GitHub Pages project site
+* Added production deployment scripts to `package.json`
+* Published the current ClientPulse MVP at the project's GitHub Pages URL
+
+### Improved
+
+* Updated project documentation to reflect the deployed MVP
+* Confirmed production TypeScript and Vite build succeeds
+* Kept the application frontend-only while establishing a clean foundation for the next development phase
+
+### Release Status
+
+* ClientPulse MVP is live and usable as a frontend demonstration
+* GitHub repository and deployed application are now aligned
+* Next development focus: customer-success workflow functionality
+
+---
+
 ## [0.3.0] — Functional MVP Polish
 
 ### Added
@@ -26,11 +50,6 @@ ClientPulse is actively developing, so this changelog records the progression fr
 * Improved the customer section from a static display into an interactive operational workspace
 * Preserved the intentionally frontend-only architecture for the MVP
 * Maintained the Aster-inspired visual foundation without copying Aster's interaction effects
-
-### Deployment
-
-* ClientPulse is ready for production frontend deployment.
-* The GitHub repository is public and will serve as the project's source of truth.
 
 ---
 
