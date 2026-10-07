@@ -1,0 +1,300 @@
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes pulse-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-status {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes pulse-sheen {
+  from {
+    transform: translateX(-110%);
+  }
+
+  to {
+    transform: translateX(110%);
+  }
+}
+
+.pulse-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: linear-gradient(to bottom, black, transparent 78%);
+}
+
+.pulse-glow {
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  border-radius: 999px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.07),
+    transparent 68%
+  );
+  filter: blur(10px);
+  pointer-events: none;
+}
+
+.pulse-reveal {
+  animation: pulse-fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.pulse-scroll-reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition:
+    opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pulse-scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pulse-section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #737373;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.pulse-section-label::before {
+  content: "";
+  width: 20px;
+  height: 1px;
+  background: #737373;
+}
+
+.pulse-divider {
+  height: 1px;
+  background: #1d1d1d;
+}
+
+.pulse-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: #d4d4d4;
+  box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.04);
+  animation: pulse-status 2.5s ease-in-out infinite;
+}
+
+.pulse-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  overflow: hidden;
+  border: 1px solid #2a2a2a;
+  padding: 13px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    background 220ms ease,
+    color 220ms ease;
+}
+
+.pulse-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-110%);
+  background: rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+}
+
+.pulse-button:hover::before {
+  animation: pulse-sheen 0.65s ease;
+}
+
+.pulse-button:hover {
+  transform: translateY(-2px);
+  border-color: #666;
+}
+
+.pulse-button-primary {
+  background: #f5f5f5;
+  color: #050505;
+  border-color: #f5f5f5;
+}
+
+.pulse-button-primary:hover {
+  background: #fff;
+  border-color: #fff;
+}
+
+.pulse-button-secondary {
+  background: transparent;
+  color: #f5f5f5;
+}
+
+.pulse-button-secondary:hover {
+  background: #111;
+}
+
+.pulse-button > * {
+  position: relative;
+  z-index: 1;
+}
+
+.pulse-card {
+  border: 1px solid #1d1d1d;
+  background: rgba(255, 255, 255, 0.015);
+  transition:
+    border-color 220ms ease,
+    background 220ms ease,
+    transform 220ms ease;
+}
+
+.pulse-card:hover {
+  border-color: #333;
+  background: rgba(255, 255, 255, 0.025);
+  transform: translateY(-2px);
+}
+
+.pulse-magnetic {
+  will-change: transform;
+  transition:
+    transform 180ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 220ms ease,
+    background 220ms ease,
+    color 220ms ease;
+}
+
+.pulse-magnetic:hover {
+  transform: translateY(-2px);
+}
+
+.pulse-cursor-dot,
+.pulse-cursor-ring {
+  position: fixed;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  z-index: 100;
+  border-radius: 999px;
+  opacity: 0;
+}
+
+.pulse-cursor-dot {
+  width: 5px;
+  height: 5px;
+  background: #fff;
+  mix-blend-mode: difference;
+  transition: opacity 0.2s ease;
+}
+
+.pulse-cursor-ring {
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  mix-blend-mode: difference;
+  transition:
+    width 0.25s ease,
+    height 0.25s ease,
+    border-color 0.25s ease,
+    opacity 0.2s ease;
+}
+
+.pulse-cursor-ring.is-hovering {
+  width: 54px;
+  height: 54px;
+  border-color: rgba(255, 255, 255, 0.85);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body {
+    cursor: none;
+  }
+
+  .pulse-cursor-dot,
+  .pulse-cursor-ring {
+    opacity: 1;
+  }
+
+  a,
+  button,
+  select {
+    cursor: none;
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .pulse-cursor-dot,
+  .pulse-cursor-ring {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .pulse-grid {
+    background-size: 48px 48px;
+    opacity: 0.45;
+  }
+
+  .pulse-glow {
+    width: 360px;
+    height: 360px;
+  }
+
+  .pulse-button {
+    min-height: 46px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .pulse-reveal,
+  .pulse-status-dot {
+    animation: none;
+  }
+
+  .pulse-scroll-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .pulse-button::before {
+    display: none;
+  }
+
+  .pulse-cursor-ring,
+  .pulse-magnetic {
+    transition: none;
+  }
+}
