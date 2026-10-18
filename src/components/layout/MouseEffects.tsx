@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-const INTERACTIVE = "a, button, select, [data-magnetic]";
+const INTERACTIVE = "a, button, select, input, [role='button'], [data-magnetic]";
 
 function MouseEffects() {
   const dotRef = useRef<HTMLDivElement>(null);
@@ -9,59 +9,65 @@ function MouseEffects() {
   const ringPosition = useRef({ x: -100, y: -100 });
 
   useEffect(() => {
-    if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
-
     const dot = dotRef.current;
     const ring = ringRef.current;
     if (!dot || !ring) return;
 
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     let frame = 0;
+    let mouseActivated = false;
+    const originalTranslate = new WeakMap<HTMLElement, string>();
+
+    const activate = () => {
+      if (mouseActivated) return;
+      mouseActivated = true;
+      document.body.classList.add("pulse-custom-cursor-enabled");
+    };
 
     const move = (event: PointerEvent) => {
+      // Ignore touch/pen so this layer never interferes with touch scrolling.
+      if (event.pointerType !== "mouse") return;
+      activate();
       position.current = { x: event.clientX, y: event.clientY };
 
       document.querySelectorAll<HTMLElement>(INTERACTIVE).forEach((element) => {
+        if (!originalTranslate.has(element)) {
+          originalTranslate.set(element, element.style.translate);
+        }
         const rect = element.getBoundingClientRect();
         const dx = event.clientX - (rect.left + rect.width / 2);
         const dy = event.clientY - (rect.top + rect.height / 2);
-        const range = Math.max(rect.width, rect.height) * 1.15;
+        const range = Math.max(rect.width, rect.height) * 1.1;
         const distance = Math.hypot(dx, dy);
 
         if (distance < range) {
-          const strength = (reduceMotion.matches ? 0.06 : 0.12) * (1 - distance / range);
-          element.style.setProperty("--pulse-magnetic-x", `${dx * strength}px`);
-          element.style.setProperty("--pulse-magnetic-y", `${dy * strength}px`);
+          const strength = 0.12 * (1 - distance / range);
+          element.style.translate = `${dx * strength}px ${dy * strength}px`;
           element.classList.add("pulse-magnetic-active");
         } else {
-          element.style.setProperty("--pulse-magnetic-x", "0px");
-          element.style.setProperty("--pulse-magnetic-y", "0px");
+          element.style.translate = originalTranslate.get(element) || "";
           element.classList.remove("pulse-magnetic-active");
         }
       });
     };
 
     const render = () => {
-      if (reduceMotion.matches) {
-        ringPosition.current = { ...position.current };
-      } else {
-        ringPosition.current.x += (position.current.x - ringPosition.current.x) * 0.14;
-        ringPosition.current.y += (position.current.y - ringPosition.current.y) * 0.14;
-      }
-
       dot.style.transform = `translate3d(${position.current.x}px, ${position.current.y}px, 0) translate(-50%, -50%)`;
+      ringPosition.current.x += (position.current.x - ringPosition.current.x) * 0.14;
+      ringPosition.current.y += (position.current.y - ringPosition.current.y) * 0.14;
       ring.style.transform = `translate3d(${ringPosition.current.x}px, ${ringPosition.current.y}px, 0) translate(-50%, -50%)`;
       frame = requestAnimationFrame(render);
     };
 
-    const setHover = (event: PointerEvent, hovering: boolean) => {
-      const target = event.target;
-      if (!(target instanceof Element)) return;
-      if (target.closest(INTERACTIVE)) ring.classList.toggle("is-hovering", hovering);
+    const onPointerOver = (event: PointerEvent) => {
+      if (event.pointerType === "mouse" && event.target instanceof Element && event.target.closest(INTERACTIVE)) {
+        ring.classList.add("is-hovering");
+      }
     };
-
-    const onPointerOver = (event: PointerEvent) => setHover(event, true);
-    const onPointerOut = (event: PointerEvent) => setHover(event, false);
+    const onPointerOut = (event: PointerEvent) => {
+      if (event.target instanceof Element && event.target.closest(INTERACTIVE)) {
+        ring.classList.remove("is-hovering");
+      }
+    };
 
     window.addEventListener("pointermove", move, { passive: true });
     document.addEventListener("pointerover", onPointerOver, { passive: true });
@@ -72,9 +78,9 @@ function MouseEffects() {
       window.removeEventListener("pointermove", move);
       document.removeEventListener("pointerover", onPointerOver);
       document.removeEventListener("pointerout", onPointerOut);
+      document.body.classList.remove("pulse-custom-cursor-enabled");
       document.querySelectorAll<HTMLElement>(INTERACTIVE).forEach((element) => {
-        element.style.removeProperty("--pulse-magnetic-x");
-        element.style.removeProperty("--pulse-magnetic-y");
+        element.style.translate = originalTranslate.get(element) || "";
         element.classList.remove("pulse-magnetic-active");
       });
       cancelAnimationFrame(frame);
