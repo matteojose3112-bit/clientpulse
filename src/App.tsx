@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import "./App.css";
 
 import Navbar from "./components/layout/Navbar";
+import MouseEffects from "./components/layout/MouseEffects";
 import MetricCard from "./components/dashboard/MetricCard";
 import CustomerCard from "./components/dashboard/CustomerCard";
 import ActivityFeed from "./components/dashboard/ActivityFeed";
@@ -178,6 +179,7 @@ function App() {
       id="main-content"
       className="min-h-screen bg-[#050505] text-white selection:bg-white selection:text-black"
     >
+      <MouseEffects />
       <Navbar />
 
       <a
