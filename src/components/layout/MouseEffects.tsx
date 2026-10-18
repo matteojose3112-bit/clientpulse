@@ -17,6 +17,13 @@ function MouseEffects() {
     let mouseActivated = false;
     const originalTranslate = new WeakMap<HTMLElement, string>();
 
+    const resetMagneticElements = () => {
+      document.querySelectorAll<HTMLElement>(INTERACTIVE).forEach((element) => {
+        element.style.translate = originalTranslate.get(element) || "";
+        element.classList.remove("pulse-magnetic-active");
+      });
+    };
+
     const activate = () => {
       if (mouseActivated) return;
       mouseActivated = true;
@@ -24,8 +31,9 @@ function MouseEffects() {
     };
 
     const move = (event: PointerEvent) => {
-      // Ignore touch/pen so this layer never interferes with touch scrolling.
+      // Leave touch and pen input alone so the effect never interferes with scrolling.
       if (event.pointerType !== "mouse") return;
+
       activate();
       position.current = { x: event.clientX, y: event.clientY };
 
@@ -33,6 +41,7 @@ function MouseEffects() {
         if (!originalTranslate.has(element)) {
           originalTranslate.set(element, element.style.translate);
         }
+
         const rect = element.getBoundingClientRect();
         const dx = event.clientX - (rect.left + rect.width / 2);
         const dy = event.clientY - (rect.top + rect.height / 2);
@@ -43,7 +52,7 @@ function MouseEffects() {
           const strength = 0.12 * (1 - distance / range);
           element.style.translate = `${dx * strength}px ${dy * strength}px`;
           element.classList.add("pulse-magnetic-active");
-        } else {
+        } else if (element.classList.contains("pulse-magnetic-active")) {
           element.style.translate = originalTranslate.get(element) || "";
           element.classList.remove("pulse-magnetic-active");
         }
@@ -63,26 +72,31 @@ function MouseEffects() {
         ring.classList.add("is-hovering");
       }
     };
+
     const onPointerOut = (event: PointerEvent) => {
       if (event.target instanceof Element && event.target.closest(INTERACTIVE)) {
         ring.classList.remove("is-hovering");
       }
     };
 
+    const onPointerLeave = () => {
+      resetMagneticElements();
+      ring.classList.remove("is-hovering");
+    };
+
     window.addEventListener("pointermove", move, { passive: true });
+    window.addEventListener("pointerleave", onPointerLeave, { passive: true });
     document.addEventListener("pointerover", onPointerOver, { passive: true });
     document.addEventListener("pointerout", onPointerOut, { passive: true });
     frame = requestAnimationFrame(render);
 
     return () => {
       window.removeEventListener("pointermove", move);
+      window.removeEventListener("pointerleave", onPointerLeave);
       document.removeEventListener("pointerover", onPointerOver);
       document.removeEventListener("pointerout", onPointerOut);
       document.body.classList.remove("pulse-custom-cursor-enabled");
-      document.querySelectorAll<HTMLElement>(INTERACTIVE).forEach((element) => {
-        element.style.translate = originalTranslate.get(element) || "";
-        element.classList.remove("pulse-magnetic-active");
-      });
+      resetMagneticElements();
       cancelAnimationFrame(frame);
     };
   }, []);
