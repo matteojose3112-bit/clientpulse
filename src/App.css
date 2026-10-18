@@ -3,36 +3,18 @@ html {
 }
 
 @keyframes pulse-fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(18px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes pulse-status {
-  0%,
-  100% {
-    opacity: 0.35;
-  }
-
-  50% {
-    opacity: 0.7;
-  }
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 0.7; }
 }
 
 @keyframes pulse-sheen {
-  from {
-    transform: translateX(-110%);
-  }
-
-  to {
-    transform: translateX(110%);
-  }
+  from { transform: translateX(-110%); }
+  to { transform: translateX(110%); }
 }
 
 .pulse-grid {
@@ -48,11 +30,7 @@ html {
   width: 520px;
   height: 520px;
   border-radius: 999px;
-  background: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 0.07),
-    transparent 68%
-  );
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.07), transparent 68%);
   filter: blur(10px);
   pointer-events: none;
 }
@@ -64,9 +42,7 @@ html {
 .pulse-scroll-reveal {
   opacity: 0;
   transform: translateY(32px);
-  transition:
-    opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .pulse-scroll-reveal.is-visible {
@@ -118,11 +94,7 @@ html {
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.02em;
-  transition:
-    transform 220ms ease,
-    border-color 220ms ease,
-    background 220ms ease,
-    color 220ms ease;
+  transition: transform 220ms ease, border-color 220ms ease, background 220ms ease, color 220ms ease;
 }
 
 .pulse-button::before {
@@ -171,10 +143,7 @@ html {
 .pulse-card {
   border: 1px solid #1d1d1d;
   background: rgba(255, 255, 255, 0.015);
-  transition:
-    border-color 220ms ease,
-    background 220ms ease,
-    transform 220ms ease;
+  transition: border-color 220ms ease, background 220ms ease, transform 220ms ease;
 }
 
 .pulse-card:hover {
@@ -184,108 +153,15 @@ html {
 }
 
 .pulse-magnetic {
-  will-change: transform;
-  transition:
-    transform 180ms cubic-bezier(0.22, 1, 0.36, 1),
-    border-color 220ms ease,
-    background 220ms ease,
-    color 220ms ease;
+  will-change: translate;
+  transition: translate 180ms cubic-bezier(0.22, 1, 0.36, 1), border-color 220ms ease, background 220ms ease, color 220ms ease;
 }
 
 .pulse-magnetic:hover {
   transform: translateY(-2px);
 }
 
-.pulse-cursor-dot,
-.pulse-cursor-ring {
-  position: fixed;
-  left: 0;
-  top: 0;
-  pointer-events: none;
-  z-index: 100;
-  border-radius: 999px;
-  opacity: 0;
-}
-
-.pulse-cursor-dot {
-  width: 5px;
-  height: 5px;
-  background: #fff;
-  mix-blend-mode: difference;
-  transition: opacity 0.2s ease;
-}
-
-.pulse-cursor-ring {
-  width: 34px;
-  height: 34px;
-  border: 1px solid rgba(255, 255, 255, 0.55);
-  mix-blend-mode: difference;
-  transition:
-    width 0.25s ease,
-    height 0.25s ease,
-    border-color 0.25s ease,
-    opacity 0.2s ease;
-}
-
-.pulse-cursor-ring.is-hovering {
-  width: 54px;
-  height: 54px;
-  border-color: rgba(255, 255, 255, 0.85);
-}
-
-body.pulse-custom-cursor-enabled,
-body.pulse-custom-cursor-enabled a,
-body.pulse-custom-cursor-enabled button,
-body.pulse-custom-cursor-enabled select { cursor: none !important; }
-body.pulse-custom-cursor-enabled .pulse-cursor-dot,
-body.pulse-custom-cursor-enabled .pulse-cursor-ring { opacity: 1; }
-
-
-
-@media (max-width: 767px) {
-  .pulse-grid {
-    background-size: 48px 48px;
-    opacity: 0.45;
-  }
-
-  .pulse-glow {
-    width: 360px;
-    height: 360px;
-  }
-
-  .pulse-button {
-    min-height: 46px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  .pulse-reveal,
-  .pulse-status-dot {
-    animation: none;
-  }
-
-  .pulse-scroll-reveal {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-
-  .pulse-button::before {
-    display: none;
-  }
-
-  .pulse-cursor-ring,
-  .pulse-magnetic {
-    transition: none;
-  }
-}
-
-
-/* Aster-inspired cursor and magnetic interaction layer */
+/* Custom cursor stays hidden until the mouse is actually detected. */
 .pulse-cursor-dot,
 .pulse-cursor-ring {
   position: fixed;
@@ -310,11 +186,7 @@ body.pulse-custom-cursor-enabled .pulse-cursor-ring { opacity: 1; }
   height: 34px;
   border: 1px solid rgba(255, 255, 255, 0.55);
   mix-blend-mode: difference;
-  transition:
-    width 0.25s ease,
-    height 0.25s ease,
-    border-color 0.25s ease,
-    opacity 0.2s ease;
+  transition: width 0.25s ease, height 0.25s ease, border-color 0.25s ease, opacity 0.2s ease;
 }
 
 .pulse-cursor-ring.is-hovering {
@@ -323,22 +195,46 @@ body.pulse-custom-cursor-enabled .pulse-cursor-ring { opacity: 1; }
   border-color: rgba(255, 255, 255, 0.9);
 }
 
-.pulse-magnetic-active {
-  transform: translate3d(var(--pulse-magnetic-x, 0), var(--pulse-magnetic-y, 0), 0) !important;
-  transition: transform 180ms cubic-bezier(0.22, 1, 0.36, 1);
-}
-
+/* Only hide the native cursor after MouseEffects activates. */
 body.pulse-custom-cursor-enabled,
 body.pulse-custom-cursor-enabled a,
 body.pulse-custom-cursor-enabled button,
-body.pulse-custom-cursor-enabled select { cursor: none !important; }
+body.pulse-custom-cursor-enabled select,
+body.pulse-custom-cursor-enabled input,
+body.pulse-custom-cursor-enabled [role="button"] {
+  cursor: none !important;
+}
+
 body.pulse-custom-cursor-enabled .pulse-cursor-dot,
-body.pulse-custom-cursor-enabled .pulse-cursor-ring { opacity: 1; }
+body.pulse-custom-cursor-enabled .pulse-cursor-ring {
+  opacity: 1;
+}
 
+/* The component uses the CSS translate property; never override transform. */
+.pulse-magnetic-active {
+  transition: translate 180ms cubic-bezier(0.22, 1, 0.36, 1);
+}
 
+@media (max-width: 767px) {
+  .pulse-grid {
+    background-size: 48px 48px;
+    opacity: 0.45;
+  }
+
+  .pulse-glow {
+    width: 360px;
+    height: 360px;
+  }
+
+  .pulse-button {
+    min-height: 46px;
+  }
+}
 
 @media (prefers-reduced-motion: reduce) {
-  .pulse-cursor-dot,
-  .pulse-cursor-ring { transition: none !important; }
-  .pulse-magnetic-active { transition: none !important; }
+  html { scroll-behavior: auto; }
+  .pulse-reveal, .pulse-status-dot { animation: none; }
+  .pulse-scroll-reveal { opacity: 1; transform: none; transition: none; }
+  .pulse-button::before { display: none; }
+  .pulse-cursor-dot, .pulse-cursor-ring, .pulse-magnetic, .pulse-magnetic-active { transition: none !important; }
 }
