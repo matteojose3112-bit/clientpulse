@@ -1,8 +1,8 @@
 # ClientPulse
 
-A customer success operations platform built through hands-on software development and AI-assisted learning.
+A customer-success operations workspace built through hands-on software development and AI-assisted learning.
 
-ClientPulse helps customer-success teams monitor customer health, identify accounts requiring attention, and manage follow-up actions from a centralized operational view.
+ClientPulse helps customer-success teams monitor account health, spot emerging risk, and turn customer signals into clear follow-up actions.
 
 The project is being developed incrementally, starting with a functional frontend MVP and expanding toward integrations, automation, analytics, and more advanced customer-success workflows.
 
@@ -16,8 +16,8 @@ ClientPulse is now a deployed, functional frontend MVP. The current version incl
 
 ## Current Features
 
-* Customer list and reusable customer cards
-* Customer information and health statuses
+* Customer portfolio with reusable account cards
+* Customer details and health statuses
 * Interactive health-status updates
 * Numeric customer health scores
 * Health-score progress visualization
@@ -27,10 +27,10 @@ ClientPulse is now a deployed, functional frontend MVP. The current version incl
 * Customer search by name or company
 * Customer filtering by health status
 * Empty-state handling and filter reset
-* Risk summary
+* At-risk account summary
 * Recent customer-operations activity feed
 * Local storage persistence across browser refreshes
-* Responsive card-based interface
+* Responsive dashboard interface
 * Reusable React components
 * TypeScript data modeling
 * React state management
