@@ -59,7 +59,7 @@ function Navbar() {
         <a
           href="#dashboard"
           onClick={closeMenu}
-          aria-label="ClientPulse home"
+          aria-label="ClientPulse dashboard"
           className="group flex items-center gap-3 text-sm font-semibold tracking-[0.18em] text-white"
         >
           <span className="flex h-8 w-8 items-center justify-center border border-white/20 text-xs transition group-hover:border-white/60">
@@ -100,7 +100,7 @@ function Navbar() {
 
         <div className="flex items-center gap-3">
           <span className="hidden text-[10px] uppercase tracking-[0.16em] text-neutral-600 sm:block">
-            MVP / 2026
+            CUSTOMER SUCCESS / MVP
           </span>
 
           <button
