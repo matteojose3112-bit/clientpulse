@@ -152,15 +152,6 @@ html {
   transform: translateY(-2px);
 }
 
-.pulse-magnetic {
-  will-change: translate;
-  transition: translate 180ms cubic-bezier(0.22, 1, 0.36, 1), border-color 220ms ease, background 220ms ease, color 220ms ease;
-}
-
-.pulse-magnetic:hover {
-  transform: translateY(-2px);
-}
-
 /* Cursor and magnetic motion mirror Aster on desktop pointers. */
 .pulse-cursor-dot,
 .pulse-cursor-ring {
