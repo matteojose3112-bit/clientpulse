@@ -1,5 +1,24 @@
 # Changelog
 
+---
+
+## [0.5.0] — Interaction & Brand Polish
+
+### Fixed
+
+* Corrected the GitHub Pages favicon path so the Aster-inspired icon loads from the project site
+* Aligned magnetic pointer movement and cursor-follow behavior with Aster
+* Limited magnetic movement to explicitly tagged call-to-action elements instead of every form control
+* Preserved native touch and coarse-pointer behavior
+
+### Improved
+
+* Refined dashboard copy around account health, risk, follow-up, and retention
+* Added page theme and social-sharing metadata
+* Improved page title and navigation wording
+
+---
+
 All notable changes to ClientPulse are documented here.
 
 ClientPulse is actively developing, so this changelog records the progression from the initial concept toward a functional customer-success operations platform.
