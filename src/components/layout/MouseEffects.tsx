@@ -1,7 +1,5 @@
 import { useEffect, useRef } from "react";
 
-const INTERACTIVE = "a, button, select, input, [role='button'], [data-magnetic]";
-
 function MouseEffects() {
   const dotRef = useRef<HTMLDivElement>(null);
   const ringRef = useRef<HTMLDivElement>(null);
@@ -9,94 +7,61 @@ function MouseEffects() {
   const ringPosition = useRef({ x: -100, y: -100 });
 
   useEffect(() => {
+    if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
     const dot = dotRef.current;
     const ring = ringRef.current;
     if (!dot || !ring) return;
 
     let frame = 0;
-    let mouseActivated = false;
-    const originalTranslate = new WeakMap<HTMLElement, string>();
-
-    const resetMagneticElements = () => {
-      document.querySelectorAll<HTMLElement>(INTERACTIVE).forEach((element) => {
-        element.style.translate = originalTranslate.get(element) || "";
-        element.classList.remove("pulse-magnetic-active");
-      });
-    };
-
-    const activate = () => {
-      if (mouseActivated) return;
-      mouseActivated = true;
-      document.body.classList.add("pulse-custom-cursor-enabled");
-    };
+    const magneticElements = Array.from(document.querySelectorAll<HTMLElement>("[data-magnetic]"));
 
     const move = (event: PointerEvent) => {
-      // Leave touch and pen input alone so the effect never interferes with scrolling.
       if (event.pointerType !== "mouse") return;
-
-      activate();
       position.current = { x: event.clientX, y: event.clientY };
-
-      document.querySelectorAll<HTMLElement>(INTERACTIVE).forEach((element) => {
-        if (!originalTranslate.has(element)) {
-          originalTranslate.set(element, element.style.translate);
-        }
-
+      magneticElements.forEach((element) => {
         const rect = element.getBoundingClientRect();
-        const dx = event.clientX - (rect.left + rect.width / 2);
-        const dy = event.clientY - (rect.top + rect.height / 2);
-        const range = Math.max(rect.width, rect.height) * 1.1;
-        const distance = Math.hypot(dx, dy);
-
+        const distanceX = event.clientX - (rect.left + rect.width / 2);
+        const distanceY = event.clientY - (rect.top + rect.height / 2);
+        const range = Math.max(rect.width, rect.height) * 0.9;
+        const distance = Math.hypot(distanceX, distanceY);
         if (distance < range) {
           const strength = 0.12 * (1 - distance / range);
-          element.style.translate = `${dx * strength}px ${dy * strength}px`;
-          element.classList.add("pulse-magnetic-active");
-        } else if (element.classList.contains("pulse-magnetic-active")) {
-          element.style.translate = originalTranslate.get(element) || "";
-          element.classList.remove("pulse-magnetic-active");
+          element.style.transform = `translate3d(${distanceX * strength}px, ${distanceY * strength}px, 0)`;
+        } else {
+          element.style.transform = "translate3d(0, 0, 0)";
         }
       });
     };
 
     const render = () => {
-      dot.style.transform = `translate3d(${position.current.x}px, ${position.current.y}px, 0) translate(-50%, -50%)`;
       ringPosition.current.x += (position.current.x - ringPosition.current.x) * 0.14;
       ringPosition.current.y += (position.current.y - ringPosition.current.y) * 0.14;
+      dot.style.transform = `translate3d(${position.current.x}px, ${position.current.y}px, 0) translate(-50%, -50%)`;
       ring.style.transform = `translate3d(${ringPosition.current.x}px, ${ringPosition.current.y}px, 0) translate(-50%, -50%)`;
       frame = requestAnimationFrame(render);
     };
 
-    const onPointerOver = (event: PointerEvent) => {
-      if (event.pointerType === "mouse" && event.target instanceof Element && event.target.closest(INTERACTIVE)) {
-        ring.classList.add("is-hovering");
-      }
-    };
-
-    const onPointerOut = (event: PointerEvent) => {
-      if (event.target instanceof Element && event.target.closest(INTERACTIVE)) {
-        ring.classList.remove("is-hovering");
-      }
-    };
-
-    const onPointerLeave = () => {
-      resetMagneticElements();
+    const enter = () => ring.classList.add("is-hovering");
+    const leave = (event: Event) => {
       ring.classList.remove("is-hovering");
+      const target = event.currentTarget as HTMLElement;
+      if (target?.hasAttribute("data-magnetic")) target.style.transform = "translate3d(0, 0, 0)";
     };
 
     window.addEventListener("pointermove", move, { passive: true });
-    window.addEventListener("pointerleave", onPointerLeave, { passive: true });
-    document.addEventListener("pointerover", onPointerOver, { passive: true });
-    document.addEventListener("pointerout", onPointerOut, { passive: true });
+    document.querySelectorAll("a, button, [data-magnetic]").forEach((element) => {
+      element.addEventListener("mouseenter", enter);
+      element.addEventListener("mouseleave", leave);
+    });
     frame = requestAnimationFrame(render);
 
     return () => {
       window.removeEventListener("pointermove", move);
-      window.removeEventListener("pointerleave", onPointerLeave);
-      document.removeEventListener("pointerover", onPointerOver);
-      document.removeEventListener("pointerout", onPointerOut);
-      document.body.classList.remove("pulse-custom-cursor-enabled");
-      resetMagneticElements();
+      document.querySelectorAll("a, button, [data-magnetic]").forEach((element) => {
+        element.removeEventListener("mouseenter", enter);
+        element.removeEventListener("mouseleave", leave);
+      });
+      magneticElements.forEach((element) => { element.style.transform = ""; });
       cancelAnimationFrame(frame);
     };
   }, []);
