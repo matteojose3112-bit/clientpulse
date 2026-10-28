@@ -214,7 +214,7 @@ function App() {
                   className="pulse-status-dot"
                   aria-hidden="true"
                 />
-                Customer operations platform
+                Customer success operations
               </span>
 
               <span className="hidden text-neutral-700 sm:inline">
@@ -222,12 +222,12 @@ function App() {
               </span>
 
               <span>
-                Health · Automation · Retention
+                Account health · Risk · Retention
               </span>
             </div>
 
             <p className="pulse-section-label mb-7">
-              Customer Success × Data × Systems
+              Customer Success × Data × Operations
             </p>
 
             <h1 className="max-w-6xl text-[clamp(3.8rem,9vw,9rem)] font-semibold leading-[0.86] tracking-[-0.065em] text-white">
@@ -239,8 +239,8 @@ function App() {
               <h2 className="text-3xl font-medium leading-tight tracking-[-0.035em] text-neutral-200 md:text-5xl lg:text-6xl">
                 Turn customer signals into{" "}
                 <span className="text-white">
-                  clear actions, healthier accounts,
-                  and smarter retention.
+                  clear next steps, healthier accounts,
+                  and stronger retention.
                 </span>
               </h2>
             </div>
@@ -248,10 +248,10 @@ function App() {
             <div className="mt-10 grid gap-8 border-t border-white/10 pt-8 lg:grid-cols-[1fr_auto] lg:items-end">
               <div>
                 <p className="max-w-2xl text-base leading-7 text-neutral-500 md:text-lg">
-                  A customer-success operations workspace
-                  for monitoring account health, identifying
-                  risk, organizing follow-up, and turning
-                  customer data into operational decisions.
+                  A customer-success workspace
+                  to monitor account health, surface
+                  risk, coordinate follow-ups, and turn
+                  customer data into better-informed retention decisions.
                 </p>
 
                 <div className="mt-6 flex flex-wrap gap-x-4 gap-y-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-neutral-600">
@@ -267,7 +267,8 @@ function App() {
               <div className="flex flex-wrap gap-3">
                 <a
                   href="#customers"
-                  className="pulse-button pulse-button-primary"
+                  data-magnetic
+                  className="pulse-button pulse-button-primary pulse-magnetic"
                 >
                   View customers
                   <span aria-hidden="true">↘</span>
@@ -275,7 +276,8 @@ function App() {
 
                 <a
                   href="#overview"
-                  className="pulse-button pulse-button-secondary"
+                  data-magnetic
+                  className="pulse-button pulse-button-secondary pulse-magnetic"
                 >
                   View overview
                   <span aria-hidden="true">↗</span>
@@ -291,7 +293,7 @@ function App() {
               href="#overview"
               className="transition hover:text-neutral-300"
             >
-              Explore dashboard ↓
+              Explore workspace ↓
             </a>
 
             <span className="hidden sm:inline">
@@ -317,31 +319,31 @@ function App() {
             <MetricCard
               label="Portfolio Health"
               value={String(portfolioHealth)}
-              detail="Average customer health score"
+              detail="Average account health score"
             />
 
             <MetricCard
               label="Total Customers"
               value={String(totalCustomers)}
-              detail="Active customer accounts"
+              detail="Accounts in this portfolio"
             />
 
             <MetricCard
               label="Healthy"
               value={String(healthyCustomers)}
-              detail="Currently healthy"
+              detail="Healthy account status"
             />
 
             <MetricCard
               label="At Risk"
               value={String(atRiskCustomers)}
-              detail="Requires follow-up"
+              detail="Follow-up recommended"
             />
 
             <MetricCard
               label="Critical"
               value={String(criticalCustomers)}
-              detail="Immediate attention"
+              detail="Priority attention"
             />
           </div>
         </div>
@@ -374,7 +376,7 @@ function App() {
               </p>
 
               <h2 className="text-3xl font-medium tracking-[-0.035em] md:text-5xl">
-                Customer accounts.
+                Account portfolio.
               </h2>
             </div>
 
@@ -397,7 +399,7 @@ function App() {
                 onChange={(event) =>
                   setSearchQuery(event.target.value)
                 }
-                placeholder="Search customers or companies..."
+                placeholder="Search by customer or company..."
                 className="w-full border border-white/10 bg-[#080808] px-4 py-3 text-sm text-white outline-none transition placeholder:text-neutral-700 hover:border-white/20 focus:border-white/40"
               />
             </label>
@@ -439,8 +441,8 @@ function App() {
           {filteredCustomers.length === 0 ? (
             <div className="pulse-card mt-8 p-10 text-center">
               <p className="text-sm text-neutral-500">
-                No customers match your search or health
-                filter.
+                No accounts match these search and health
+                filter settings.
               </p>
 
               <button
