@@ -1,5 +1,7 @@
 # Changelog
 
+All notable changes to ClientPulse are documented here.
+
 ---
 
 ## [0.5.0] — Interaction & Brand Polish
@@ -18,8 +20,6 @@
 * Improved page title and navigation wording
 
 ---
-
-All notable changes to ClientPulse are documented here.
 
 ClientPulse is actively developing, so this changelog records the progression from the initial concept toward a functional customer-success operations platform.
 
