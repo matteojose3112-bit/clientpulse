@@ -441,8 +441,7 @@ function App() {
           {filteredCustomers.length === 0 ? (
             <div className="pulse-card mt-8 p-10 text-center">
               <p className="text-sm text-neutral-500">
-                No accounts match these search and health
-                filter settings.
+                No accounts match your current search or health filter.
               </p>
 
               <button
