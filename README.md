@@ -1,97 +1,72 @@
 # ClientPulse
 
-A customer-success operations workspace built through hands-on software development and AI-assisted learning.
+A customer-success portfolio dashboard built through hands-on software development and AI-assisted learning.
 
-ClientPulse helps customer-success teams monitor account health, spot emerging risk, and turn customer signals into clear follow-up actions.
-
-The project is being developed incrementally, starting with a functional frontend MVP and expanding toward integrations, automation, analytics, and more advanced customer-success workflows.
+ClientPulse demonstrates how a customer-success team could review account health, identify accounts that may need attention, and prioritize follow-up conversations.
 
 ## Current Status
 
-**Functional Frontend MVP — Live on GitHub Pages**
+**Functional frontend MVP complete · Maintenance mode**
 
-ClientPulse is now a deployed, functional frontend MVP. The current version includes a customer data model, editable customer health, numeric health scores, live portfolio metrics, search and filtering, risk summaries, recent activity, browser persistence, and GitHub Pages deployment.
+ClientPulse is a deployed, frontend-only MVP. It demonstrates an account portfolio, editable health status, health-score calculations, search and filtering, risk summaries, a sample activity feed, and browser-local persistence.
 
 **Live application:** https://matteojose3112-bit.github.io/clientpulse/
 
+The MVP is intentionally limited to a single browser experience with sample data. It is not a production CRM or a multi-user customer-success system.
+
 ## Current Features
 
-* Customer portfolio with reusable account cards
-* Customer details and health statuses
-* Interactive health-status updates
-* Numeric customer health scores
-* Health-score progress visualization
-* Automatic health-score updates when status changes
-* Live portfolio health calculation
-* Live customer counts for Total, Healthy, At Risk, and Critical accounts
-* Customer search by name or company
-* Customer filtering by health status
-* Empty-state handling and filter reset
-* At-risk account summary
-* Recent customer-operations activity feed
-* Local storage persistence across browser refreshes
-* Responsive dashboard interface
-* Reusable React components
-* TypeScript data modeling
-* React state management
-* Functional frontend interactions
-* Production build configuration
-* GitHub Pages deployment
+- Sample customer portfolio with reusable account cards
+- Customer and company details
+- Editable Healthy, At Risk, and Critical statuses
+- Health scores and score visualization
+- Status-based health-score updates
+- Portfolio health calculation and account counts
+- Customer search by name or company
+- Health-status filtering and clear-filter empty state
+- Risk summary ordered by health score
+- Static sample activity feed
+- Browser local-storage persistence for customer changes
+- Responsive dashboard interface
+- Reusable React components and TypeScript data modeling
+- GitHub Pages deployment
+- GitHub Actions CI for linting and production builds
+
+## Scope and Limitations
+
+- Customer and activity records are illustrative sample data, not live customer records.
+- Customer changes are stored in the current browser's local storage. They do not sync across devices or users and are not backed by a server.
+- The activity feed is static sample content; it is not generated from customer actions.
+- Health scores are demonstration values associated with status changes, not a validated predictive model.
+- There is no authentication, database, API, CRM integration, task-management workflow, notification service, or automated risk detection.
+- Do not enter real customer, confidential, or sensitive information.
+
+These limitations are deliberate boundaries of the completed frontend MVP, not claims of unfinished production functionality.
 
 ## Tech Stack
 
-* React
-* TypeScript
-* Vite
-* Tailwind CSS
-* Git
-* GitHub
-* GitHub Pages
-* gh-pages
-
-Additional technologies such as APIs, databases, Python, SQL, automation platforms, and analytics tools may be introduced as the project evolves.
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- GitHub Actions
+- GitHub Pages
 
 ## Project Goal
 
-ClientPulse is being built as a practical software project rather than a static portfolio concept.
-
-The goal is to learn by building a progressively more capable customer-success application while developing practical skills in:
-
-* Frontend development
-* React component architecture
-* TypeScript
-* Application state
-* Data modeling
-* Business logic
-* API integration
-* Automation
-* Analytics
-* Software architecture
-* Git and GitHub workflows
-* Deployment
-
-## Development Approach
-
-ClientPulse is being developed with AI as a development and learning partner.
-
-AI is used to help explain unfamiliar concepts, explore implementation approaches, troubleshoot problems, and accelerate development.
-
-The objective is to understand and work with the resulting software rather than simply generate it.
+ClientPulse was built as a practical learning project to explore frontend development, component architecture, TypeScript data modeling, application state, business logic, and deployment.
 
 The project follows:
 
-**Learn → Build → Test → Understand → Improve → Repeat**
+**Learn → Build → Test → Understand → Improve**
 
-## Roadmap
+## Project Documentation
 
-See [ROADMAP.md](ROADMAP.md) for the current development plan.
-
-## Changelog
-
-See [CHANGELOG.md](CHANGELOG.md) for completed changes and milestones.
+- [Roadmap](ROADMAP.md)
+- [Changelog](CHANGELOG.md)
 
 ## Author
 
 **Matteo Jose**
 
-Building software through hands-on learning, experimentation, and AI-assisted development.
+Building practical software through hands-on learning, experimentation, and AI-assisted development.
