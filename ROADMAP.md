@@ -1,142 +1,84 @@
 # ClientPulse Roadmap
 
-ClientPulse is an evolving customer-success operations platform.
+ClientPulse is a completed frontend MVP demonstrating a customer-success account portfolio. The original roadmap explored a much larger platform; this closeout records what was actually built and separates deferred ideas from delivered functionality.
 
-The roadmap focuses on building a functional foundation first, then progressively introducing more advanced customer workflows, risk intelligence, data integrations, automation, and analytics.
+## Project Status
+
+**MVP complete · Maintenance mode**
+
+The current project scope is the deployed frontend demonstration. No backend, multi-user, CRM, or automation functionality is implied.
 
 ---
 
-## 🟢 Phase 1 — Functional Foundation
+## Phase 1 — Functional Frontend MVP
 
 **Status: Complete**
 
-* [x] Create GitHub repository
-* [x] Set up React + TypeScript + Vite
-* [x] Configure ESLint
-* [x] Establish initial application
-* [x] Create customer data model
-* [x] Add sample customer records
-* [x] Display customer information
-* [x] Add customer health statuses
-* [x] Add interactive health updates
-* [x] Calculate customer-health metrics
-* [x] Establish Aster-inspired visual foundation
-* [x] Add responsive dashboard sections
-* [x] Add reusable metric and customer components
-* [x] Add recent activity feed
-* [x] Add numeric health scores
-* [x] Add portfolio health calculation
-* [x] Add persistent local storage
-* [x] Add customer search
-* [x] Add customer health filtering
-* [x] Add risk summary
-* [x] Add empty-state handling
-* [x] Configure production build
-* [x] Deploy MVP to GitHub Pages
+- [x] Create GitHub repository
+- [x] Set up React + TypeScript + Vite
+- [x] Configure ESLint and production build
+- [x] Create customer data model and sample records
+- [x] Display customer information and health statuses
+- [x] Add interactive health updates
+- [x] Add demonstration health scores and portfolio metrics
+- [x] Add reusable metric and customer components
+- [x] Add responsive dashboard sections
+- [x] Add sample activity feed and risk summary
+- [x] Add customer search and health filtering
+- [x] Add empty-state handling and filter reset
+- [x] Persist customer changes in browser local storage
+- [x] Configure and publish GitHub Pages deployment
+- [x] Add GitHub Actions CI for lint and production build
+- [x] Document MVP scope, limitations, and maintenance status
+
+## Deferred Ideas — Not Part of the Completed MVP
+
+The following items appeared in the original long-term vision but were not implemented. They are not required to consider the current frontend MVP complete.
+
+### Customer-success workflows
+- [ ] Customer detail views
+- [ ] Follow-up task creation and completion
+- [ ] Due dates and task prioritization
+- [ ] Customer notes and activity history
+- [ ] Onboarding milestones and account ownership
+
+### Health and risk intelligence
+- [ ] Evidence-based health-score factors
+- [ ] Inactivity detection and risk indicators
+- [ ] Escalation conditions and renewal-risk tracking
+- [ ] Customer segmentation and risk trends
+
+### Backend and integrations
+- [ ] Persistent server-side database
+- [ ] REST API and authentication
+- [ ] Multi-user accounts and authorization
+- [ ] CRM and product-usage integrations
+- [ ] Webhooks and data synchronization
+
+### Automation and analytics
+- [ ] Automated follow-up and onboarding workflows
+- [ ] Risk alerts and notifications
+- [ ] Retention and renewal reporting
+- [ ] Advanced analytics and executive reporting
+
+These ideas should only be revisited if there is a clear practical reason and a deliberate decision to expand the project beyond its MVP.
 
 ---
 
-## 🔵 Phase 2 — Customer Success Workflow
+## Maintenance Scope
 
-**Status: Next**
+ClientPulse should remain stable and accurately represented as a frontend demonstration.
 
-* [ ] Customer detail view
-* [ ] Follow-up tasks
-* [ ] Task completion
-* [ ] Due dates
-* [ ] Customer activity history
-* [ ] Onboarding milestones
-* [ ] Customer notes
-* [ ] Account ownership
-* [ ] Basic task prioritization
+Maintenance may include:
+- Fixing reproducible defects
+- Keeping dependencies and CI healthy
+- Correcting documentation or deployment issues
+- Addressing clear accessibility or responsive-layout defects
 
----
-
-## 🟣 Phase 3 — Health & Risk Intelligence
-
-**Status: Planned**
-
-* [x] Basic customer health scoring
-* [ ] Health-score factors
-* [ ] Risk indicators
-* [ ] Inactivity detection
-* [ ] Escalation conditions
-* [ ] Renewal-risk tracking
-* [ ] Customer segmentation
-* [ ] Risk trend history
-
----
-
-## 🟡 Phase 4 — Data & Integrations
-
-**Status: Planned**
-
-* [ ] Persistent database
-* [ ] REST API
-* [ ] CRM integration
-* [ ] Product-usage data
-* [ ] Webhooks
-* [ ] Data synchronization
-* [ ] Structured backend
-* [ ] Authentication and user accounts
-
----
-
-## 🟠 Phase 5 — Automation
-
-**Status: Planned**
-
-* [ ] Automated follow-up workflows
-* [ ] Automated onboarding actions
-* [ ] Risk alerts
-* [ ] Escalation workflows
-* [ ] Notification system
-* [ ] Workflow history
-
-Potential technologies may include automation platforms, webhooks, APIs, and Python-based services where appropriate.
-
----
-
-## 🔴 Phase 6 — Analytics & Reporting
-
-**Status: Future**
-
-* [ ] Customer-success dashboard
-* [ ] Retention metrics
-* [ ] Renewal reporting
-* [ ] Customer health trends
-* [ ] Data visualization
-* [ ] Executive reporting
-* [ ] Advanced analytics
-
----
-
-## 🏁 Long-Term Vision
-
-ClientPulse should evolve from a simple customer-health tracker into a practical customer-success operations platform.
-
-The long-term direction is:
-
-```
-Customer Data
-      ↓
-Health & Activity
-      ↓
-Risk Detection
-      ↓
-Tasks & Workflows
-      ↓
-Automation
-      ↓
-Analytics & Reporting
-```
-
-The complexity of the application should grow alongside the skills and technologies being learned.
-
----
+Manual browser checks across mobile, tablet, and desktop; keyboard-only interaction; and rendered contrast review should be performed before making stronger accessibility or cross-device claims. They are not recorded as completed by this documentation update.
 
 ## Guiding Principle
 
-> **Build the minimum functional version first. Then make it better.**
+> **A clearly scoped, working MVP is better than an unfinished promise of a larger platform.**
 
-Every planned feature should have a practical reason to exist and should be implemented, tested, and understood before being considered complete.
+The current milestone is complete. Further development is optional, not an outstanding requirement.
