@@ -4,6 +4,26 @@ All notable changes to ClientPulse are documented here.
 
 ---
 
+## [0.6.0] — MVP Closeout & Maintenance Mode
+
+### Added
+- GitHub Actions CI for linting and production builds on pushes and pull requests to `main`
+- Clear documentation of the frontend MVP's scope and limitations
+
+### Improved
+- Clarified that customer and activity records are illustrative sample data
+- Documented browser-local persistence and its single-browser limitations
+- Separated delivered MVP functionality from deferred backend, multi-user, CRM, workflow, automation, and analytics ideas
+- Closed the current roadmap at the deployed frontend MVP milestone
+
+### Release Status
+- The frontend MVP remains deployed on GitHub Pages
+- ClientPulse is now in maintenance mode
+- Deferred roadmap ideas are optional future scope, not incomplete MVP requirements
+- Manual browser, keyboard, and rendered-contrast checks remain unverified
+
+---
+
 ## [0.5.0] — Interaction & Brand Polish
 
 ### Fixed
