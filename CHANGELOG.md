@@ -144,3 +144,10 @@ The initial objective was to build a minimum functional application first, under
 ### Next
 
 The next development stage will focus on deeper customer-success workflow and risk intelligence, followed by integrations and automation.
+
+## [0.7.0] — Documentation synchronization — 2026-11-03
+
+### Updated
+- Refreshed the README and roadmap to reaffirm the deployed frontend-only MVP boundary.
+- Reconfirmed that customer/activity data is illustrative and persistence is browser-local.
+- Kept backend, multi-user, CRM, and automation concepts explicitly deferred rather than implying they are implemented.
