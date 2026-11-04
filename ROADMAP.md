@@ -82,3 +82,11 @@ Manual browser checks across mobile, tablet, and desktop; keyboard-only interact
 > **A clearly scoped, working MVP is better than an unfinished promise of a larger platform.**
 
 The current milestone is complete. Further development is optional, not an outstanding requirement.
+
+---
+
+Review date: 2026-11-03
+
+## Current direction — 2026-11-03
+
+**MVP complete · Maintenance mode.** No additional platform features are required for the current milestone. Prioritize defect fixes, dependency/CI maintenance, documentation accuracy, and manual browser/accessibility checks. Only reopen deferred backend or workflow ideas if a concrete use case justifies expanding beyond the frontend demonstration.
