@@ -71,6 +71,10 @@ The project follows:
 
 Building practical software through hands-on learning, experimentation, and AI-assisted development.
 
-## Documentation review — 2026-11-03
+## Documentation review — 2026-11-08
 
-Documentation review — 2026-11-03: ClientPulse remains a deployed, frontend-only MVP in maintenance mode. Its customer records and activity feed are illustrative; edits persist only in the current browser. No backend, authentication, multi-user sync, CRM integration, or automated risk prediction is claimed. Deferred ideas remain optional.
+ClientPulse remains a deployed, frontend-only MVP in maintenance mode. The latest recorded GitHub Actions CI run succeeded on 2026-11-04 (commit `613d409`). This documentation refresh does not add application functionality.
+
+The implemented scope remains a sample customer portfolio, editable health statuses and demonstration scores, portfolio metrics, search/filtering, a static sample activity feed, and browser-local persistence. Customer and activity records are illustrative; edits remain in the current browser only. There is no backend, authentication, database, multi-user sync, CRM integration, task-management workflow, notification service, or predictive risk model.
+
+The MVP is complete within those boundaries. Manual mobile/tablet/desktop, keyboard-only, and rendered-contrast checks remain maintenance verification—not completed claims. Do not enter real customer or sensitive information.
