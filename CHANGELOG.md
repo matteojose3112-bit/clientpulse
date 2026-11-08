@@ -1,3 +1,14 @@
+# [0.4.0] — Documentation and CI status reconciliation — 2026-11-08
+
+### Updated
+- Refreshed README and roadmap status to reflect the current frontend-only MVP and maintenance scope.
+- Recorded the latest successful GitHub Actions CI run (2026-11-04, commit `613d409`).
+- Reaffirmed that customer/activity data is illustrative and changes persist only in the current browser.
+- Kept manual responsive, keyboard, and contrast checks as outstanding maintenance verification.
+- No application functionality or deployment configuration changed.
+
+---
+
 # Changelog
 
 All notable changes to ClientPulse are documented here.
