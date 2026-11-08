@@ -1,4 +1,10 @@
-# [0.4.0] — Documentation and CI status reconciliation — 2026-11-08
+# Changelog
+
+All notable changes to ClientPulse are documented here.
+
+---
+
+## [0.4.0] — Documentation and CI status reconciliation — 2026-11-08
 
 ### Updated
 - Refreshed README and roadmap status to reflect the current frontend-only MVP and maintenance scope.
@@ -9,9 +15,7 @@
 
 ---
 
-# Changelog
 
-All notable changes to ClientPulse are documented here.
 
 ---
 
