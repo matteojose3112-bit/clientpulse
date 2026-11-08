@@ -85,8 +85,19 @@ The current milestone is complete. Further development is optional, not an outst
 
 ---
 
-Review date: 2026-11-03
 
-## Current direction — 2026-11-03
+---
 
-**MVP complete · Maintenance mode.** No additional platform features are required for the current milestone. Prioritize defect fixes, dependency/CI maintenance, documentation accuracy, and manual browser/accessibility checks. Only reopen deferred backend or workflow ideas if a concrete use case justifies expanding beyond the frontend demonstration.
+Review date: 2026-11-08
+
+## Current direction — 2026-11-08
+
+**Frontend MVP complete · Maintenance mode.** The latest recorded GitHub Actions CI run succeeded on 2026-11-04 (commit `613d409`). The current milestone is complete; no backend, authentication, multi-user, CRM, or automation work is required for the existing demonstration.
+
+Maintenance priorities:
+- [ ] Fix reproducible defects and keep dependencies/CI healthy.
+- [ ] Perform manual mobile, tablet, and desktop checks.
+- [ ] Review keyboard-only interaction and rendered contrast before making stronger accessibility claims.
+- [ ] Keep documentation aligned with the sample-data and browser-local persistence boundaries.
+
+Deferred backend and integration ideas should be reopened only when a concrete use case justifies expanding beyond the frontend MVP.
