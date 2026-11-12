@@ -27,6 +27,8 @@ The MVP is intentionally limited to a single browser experience with sample data
 - Risk summary ordered by health score
 - Static sample activity feed
 - Browser local-storage persistence for customer changes
+- Runtime validation of restored customer records, including required fields, health values, score bounds, and unique IDs
+- Graceful fallback when browser storage is malformed, unavailable, or write-protected
 - Responsive dashboard interface
 - Reusable React components and TypeScript data modeling
 - GitHub Pages deployment
@@ -70,6 +72,10 @@ The project follows:
 **Matteo Jose**
 
 Building practical software through hands-on learning, experimentation, and AI-assisted development.
+
+## Maintenance update — 2026-11-11
+
+The storage boundary now validates saved customer records before they enter application state. Invalid or duplicate records fall back to the bundled sample portfolio, and storage read/write failures do not prevent the dashboard from rendering. Persistence remains browser-local and best-effort; this does not add server-side backup or multi-user synchronization.
 
 ## Documentation review — 2026-11-03
 
