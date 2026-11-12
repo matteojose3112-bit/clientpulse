@@ -32,7 +32,8 @@ The MVP is intentionally limited to a single browser experience with sample data
 - Responsive dashboard interface
 - Reusable React components and TypeScript data modeling
 - GitHub Pages deployment
-- GitHub Actions CI for linting and production builds
+- Focused Node.js unit tests for customer-storage validation and failure handling (`npm test`)
+- GitHub Actions CI for unit tests, linting, and production builds
 
 ## Scope and Limitations
 
@@ -75,7 +76,7 @@ Building practical software through hands-on learning, experimentation, and AI-a
 
 ## Maintenance update — 2026-11-11
 
-The storage boundary now validates saved customer records before they enter application state. Invalid or duplicate records fall back to the bundled sample portfolio, and storage read/write failures do not prevent the dashboard from rendering. Persistence remains browser-local and best-effort; this does not add server-side backup or multi-user synchronization.
+The storage boundary now validates saved customer records before they enter application state. Invalid or duplicate records fall back to the bundled sample portfolio, and storage read/write failures do not prevent the dashboard from rendering. Focused Node.js tests cover these validation and failure paths; the first CI execution is pending. Persistence remains browser-local and best-effort; this does not add server-side backup or multi-user synchronization.
 
 ## Documentation review — 2026-11-03
 
