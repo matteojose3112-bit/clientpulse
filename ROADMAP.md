@@ -31,7 +31,7 @@ The current project scope is the deployed frontend demonstration. No backend, mu
 - [x] Reject duplicate IDs, invalid health statuses, malformed fields, and out-of-range scores
 - [x] Keep the dashboard usable when browser storage reads or writes fail
 - [x] Add focused Node.js unit tests for validation, fallback, duplicate IDs, and storage failures
-- [ ] Verify the new unit-test, lint, and production-build CI run
+- [x] Verify the new unit-test, lint, and production-build CI run (GitHub Actions run #18 passed)
 - [x] Configure and publish GitHub Pages deployment
 - [x] Add GitHub Actions CI for lint and production build
 - [x] Document MVP scope, limitations, and maintenance status
@@ -80,7 +80,7 @@ Maintenance may include:
 - Correcting documentation or deployment issues
 - Addressing clear accessibility or responsive-layout defects
 
-Manual browser checks across mobile, tablet, and desktop; keyboard-only interaction; and rendered contrast review should be performed before making stronger accessibility or cross-device claims. They are not recorded as completed by this documentation update. The new automated storage tests are implemented, with their first CI execution pending.
+Manual browser smoke testing of the currently deployed GitHub Pages build confirmed rendering, customer list visibility, search, health filtering, and in-session status updates, with no visible console or network errors. A status edit reverted after reload on that deployed build. PR #3 remains unmerged, so the updated storage-validation code has not yet been deployed and its persistence behavior is not verified live. Mobile/tablet coverage beyond the browser session, keyboard-only interaction, and rendered contrast review remain pending.
 
 ## Guiding Principle
 
