@@ -7,7 +7,7 @@ import {
   isCustomerHealth,
   loadCustomers,
   saveCustomers,
-} from "../src/data/customerStorage.mjs";
+} from "../src/data/customerStorage.ts";
 
 const STORAGE_KEY = "clientpulse-customers";
 
@@ -61,9 +61,8 @@ test("validates the complete customer record shape", () => {
 
 test("uses bundled customers when no saved value exists", () => {
   const fallback = [...customers];
-  assert.equal(loadCustomers(() => createStorage().read() === null
-    ? createStorage()
-    : createStorage(), fallback), fallback);
+  const storage = createStorage();
+  assert.equal(loadCustomers(() => storage, fallback), fallback);
 });
 
 test("restores valid saved customers", () => {
