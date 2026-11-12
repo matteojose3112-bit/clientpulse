@@ -8,8 +8,14 @@
 - Fall back to the bundled sample portfolio when saved data is invalid or cannot be read.
 - Handle local-storage write failures without breaking dashboard interactions.
 
+### Tests
+- Extracted customer-storage validation and persistence into a small testable module.
+- Added Node.js unit tests for valid and invalid records, supported health statuses, malformed JSON, non-array data, duplicate IDs, blocked storage reads, successful writes, and failed writes.
+- Added the unit-test command to CI ahead of lint and production build.
+
 ### Verification
-- GitHub Actions lint and production build passed for the PR revision available on 2026-11-12.
+- The earlier lint and production build passed before this test-suite change.
+- CI for the new test suite and refactored storage module is pending.
 - Manual browser verification for malformed local storage and storage write failures remains pending.
 
 ### Notes
