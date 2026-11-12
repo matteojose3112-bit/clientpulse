@@ -27,6 +27,9 @@ The current project scope is the deployed frontend demonstration. No backend, mu
 - [x] Add customer search and health filtering
 - [x] Add empty-state handling and filter reset
 - [x] Persist customer changes in browser local storage
+- [x] Validate restored records before using browser-saved customer data
+- [x] Reject duplicate IDs, invalid health statuses, malformed fields, and out-of-range scores
+- [x] Keep the dashboard usable when browser storage reads or writes fail
 - [x] Configure and publish GitHub Pages deployment
 - [x] Add GitHub Actions CI for lint and production build
 - [x] Document MVP scope, limitations, and maintenance status
@@ -85,8 +88,8 @@ The current milestone is complete. Further development is optional, not an outst
 
 ---
 
-Review date: 2026-11-03
+Review date: 2026-11-11
 
-## Current direction — 2026-11-03
+## Current direction — 2026-11-11
 
-**MVP complete · Maintenance mode.** No additional platform features are required for the current milestone. Prioritize defect fixes, dependency/CI maintenance, documentation accuracy, and manual browser/accessibility checks. Only reopen deferred backend or workflow ideas if a concrete use case justifies expanding beyond the frontend demonstration.
+**MVP complete · Maintenance mode.** No additional platform features are required for the current milestone. Prioritize defect fixes, dependency/CI maintenance, documentation accuracy, and manual browser/accessibility checks. Browser persistence now validates restored records and degrades safely when storage is unavailable. Only reopen deferred backend or workflow ideas if a concrete use case justifies expanding beyond the frontend demonstration.
