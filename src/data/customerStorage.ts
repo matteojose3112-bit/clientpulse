@@ -9,10 +9,7 @@ export function isCustomerHealth(value: unknown): value is CustomerHealth {
 }
 
 export function isCustomer(value: unknown): value is Customer {
-  if (typeof value !== "object" || value === null) {
-    return false;
-  }
-
+  if (typeof value !== "object" || value === null) return false;
   const customer = value as Record<string, unknown>;
 
   return (
@@ -35,22 +32,15 @@ export function loadCustomers(
 ): Customer[] {
   try {
     const savedCustomers = getStorage().getItem(STORAGE_KEY);
-
-    if (!savedCustomers) {
-      return fallbackCustomers;
-    }
+    if (!savedCustomers) return fallbackCustomers;
 
     const parsedCustomers: unknown = JSON.parse(savedCustomers);
-
     if (!Array.isArray(parsedCustomers) || !parsedCustomers.every(isCustomer)) {
       return fallbackCustomers;
     }
 
     const customerIds = parsedCustomers.map((customer) => customer.id);
-
-    if (new Set(customerIds).size !== customerIds.length) {
-      return fallbackCustomers;
-    }
+    if (new Set(customerIds).size !== customerIds.length) return fallbackCustomers;
 
     return parsedCustomers;
   } catch {
