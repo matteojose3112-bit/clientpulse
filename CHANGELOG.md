@@ -8,9 +8,12 @@
 - Fall back to the bundled sample portfolio when saved data is invalid or cannot be read.
 - Handle local-storage write failures without breaking dashboard interactions.
 
+### Verification
+- GitHub Actions lint and production build passed for the PR revision available on 2026-11-12.
+- Manual browser verification for malformed local storage and storage write failures remains pending.
+
 ### Notes
 - Persistence remains best-effort and local to the current browser; no backend, backup, or cross-device sync was added.
-- Automated build/lint and live browser verification remain to be run before considering this change validated.
 
 ---
 
@@ -117,7 +120,7 @@ ClientPulse is actively developing, so this changelog records the progression fr
 * Added Recent Activity feed
 * Added customer numeric health scores
 * Added health-score progress visualization
-* Added automatic score updates when customer health status changes
+* Added automatic score updates when health status changes
 * Added live Portfolio Health metric based on customer health scores
 * Added live customer counts for Total, Healthy, At Risk, and Critical accounts
 
