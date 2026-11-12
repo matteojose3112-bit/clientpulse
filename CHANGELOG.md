@@ -15,8 +15,10 @@
 
 ### Verification
 - The earlier lint and production build passed before this test-suite change.
-- CI for the new test suite and refactored storage module is pending.
-- Manual browser verification for malformed local storage and storage write failures remains pending.
+- GitHub Actions run #18 passed: all 10 unit tests, lint, and the production build completed successfully.
+- A live smoke test of the currently deployed GitHub Pages build verified rendering, all six sample customer cards, search, health filtering, and in-session status updates. No visible console errors, failed network requests, or broken assets were observed.
+- On the deployed build, a health-status edit reverted after reload. PR #3 remains unmerged and its branch has not been deployed, so the new storage-validation and failure-handling behavior still needs branch-specific browser verification after an approved deployment.
+- Malformed-storage and blocked-write browser scenarios remain unverified manually; those cases are covered by the automated unit tests.
 
 ### Notes
 - Persistence remains best-effort and local to the current browser; no backend, backup, or cross-device sync was added.
