@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.7.1] — Browser Storage Resilience — 2026-11-11
+
+### Fixed
+- Validate browser-restored customer records before using them in dashboard state.
+- Reject malformed records, unsupported health statuses, invalid score ranges, and duplicate customer IDs.
+- Fall back to the bundled sample portfolio when saved data is invalid or cannot be read.
+- Handle local-storage write failures without breaking dashboard interactions.
+
+### Notes
+- Persistence remains best-effort and local to the current browser; no backend, backup, or cross-device sync was added.
+- Automated build/lint and live browser verification remain to be run before considering this change validated.
+
+---
+
 All notable changes to ClientPulse are documented here.
 
 ---
