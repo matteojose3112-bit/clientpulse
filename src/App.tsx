@@ -21,9 +21,38 @@ const healthScores: Record<CustomerHealth, number> = {
   Critical: 30,
 };
 
+function isCustomerHealth(value: unknown): value is CustomerHealth {
+  return (
+    value === "Healthy" ||
+    value === "At Risk" ||
+    value === "Critical"
+  );
+}
+
+function isCustomer(value: unknown): value is Customer {
+  if (typeof value !== "object" || value === null) {
+    return false;
+  }
+
+  const customer = value as Record<string, unknown>;
+
+  return (
+    Number.isSafeInteger(customer.id) &&
+    typeof customer.name === "string" &&
+    typeof customer.company === "string" &&
+    isCustomerHealth(customer.health) &&
+    typeof customer.healthScore === "number" &&
+    Number.isFinite(customer.healthScore) &&
+    customer.healthScore >= 0 &&
+    customer.healthScore <= 100 &&
+    typeof customer.lastContact === "string" &&
+    typeof customer.nextAction === "string"
+  );
+}
+
 function loadCustomers(): Customer[] {
   try {
-    const savedCustomers = localStorage.getItem(STORAGE_KEY);
+    const savedCustomers = window.localStorage.getItem(STORAGE_KEY);
 
     if (!savedCustomers) {
       return initialCustomers;
@@ -31,12 +60,22 @@ function loadCustomers(): Customer[] {
 
     const parsedCustomers: unknown = JSON.parse(savedCustomers);
 
-    if (!Array.isArray(parsedCustomers)) {
+    if (
+      !Array.isArray(parsedCustomers) ||
+      !parsedCustomers.every(isCustomer)
+    ) {
       return initialCustomers;
     }
 
-    return parsedCustomers as Customer[];
+    const customerIds = parsedCustomers.map((customer) => customer.id);
+
+    if (new Set(customerIds).size !== customerIds.length) {
+      return initialCustomers;
+    }
+
+    return parsedCustomers;
   } catch {
+    // Storage may be unavailable or contain malformed JSON.
     return initialCustomers;
   }
 }
@@ -52,7 +91,14 @@ function App() {
    * a page refresh.
    */
   useEffect(() => {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(customers));
+    try {
+      window.localStorage.setItem(
+        STORAGE_KEY,
+        JSON.stringify(customers),
+      );
+    } catch {
+      // The dashboard remains usable when browser storage is unavailable.
+    }
   }, [customers]);
 
   /*
