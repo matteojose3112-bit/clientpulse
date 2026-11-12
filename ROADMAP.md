@@ -30,6 +30,8 @@ The current project scope is the deployed frontend demonstration. No backend, mu
 - [x] Validate restored records before using browser-saved customer data
 - [x] Reject duplicate IDs, invalid health statuses, malformed fields, and out-of-range scores
 - [x] Keep the dashboard usable when browser storage reads or writes fail
+- [x] Add focused Node.js unit tests for validation, fallback, duplicate IDs, and storage failures
+- [ ] Verify the new unit-test, lint, and production-build CI run
 - [x] Configure and publish GitHub Pages deployment
 - [x] Add GitHub Actions CI for lint and production build
 - [x] Document MVP scope, limitations, and maintenance status
@@ -78,7 +80,7 @@ Maintenance may include:
 - Correcting documentation or deployment issues
 - Addressing clear accessibility or responsive-layout defects
 
-Manual browser checks across mobile, tablet, and desktop; keyboard-only interaction; and rendered contrast review should be performed before making stronger accessibility or cross-device claims. They are not recorded as completed by this documentation update.
+Manual browser checks across mobile, tablet, and desktop; keyboard-only interaction; and rendered contrast review should be performed before making stronger accessibility or cross-device claims. They are not recorded as completed by this documentation update. The new automated storage tests are implemented, with their first CI execution pending.
 
 ## Guiding Principle
 
@@ -88,8 +90,8 @@ The current milestone is complete. Further development is optional, not an outst
 
 ---
 
-Review date: 2026-11-11
+Review date: 2026-11-12
 
-## Current direction — 2026-11-11
+## Current direction — 2026-11-12
 
 **MVP complete · Maintenance mode.** No additional platform features are required for the current milestone. Prioritize defect fixes, dependency/CI maintenance, documentation accuracy, and manual browser/accessibility checks. Browser persistence now validates restored records and degrades safely when storage is unavailable. Only reopen deferred backend or workflow ideas if a concrete use case justifies expanding beyond the frontend demonstration.
