@@ -116,7 +116,7 @@ Review date: 2026-11-12
 - [x] Improve contrast of placeholder text, interactive control borders, and secondary interface text.
 - [x] Announce filtered account-count updates through a status region.
 - [x] Verify source already has associated labels, one primary h1, and reduced-motion CSS; no unnecessary duplicate fixes.
-- [ ] Run CI on the latest accessibility changes.
+- [x] Run CI on the latest accessibility source changes (GitHub Actions runs #32 and #33 passed unit tests, lint, and production build).
 - [ ] After an approved deployment, repeat keyboard and responsive checks against the updated branch.
 - [ ] Perform actual screen-reader testing and measure exact computed contrast and mobile touch-target sizes.
 
