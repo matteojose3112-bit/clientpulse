@@ -86,7 +86,7 @@ function Navbar() {
               >
                 <span
                   className={`mr-2 ${
-                    isActive ? "text-neutral-400" : "text-neutral-700"
+                    isActive ? "text-neutral-400" : "text-neutral-500"
                   }`}
                 >
                   0{index + 1}
@@ -99,7 +99,7 @@ function Navbar() {
         </div>
 
         <div className="flex items-center gap-3">
-          <span className="hidden text-[10px] uppercase tracking-[0.16em] text-neutral-600 sm:block">
+          <span className="hidden text-[10px] uppercase tracking-[0.16em] text-neutral-500 sm:block">
             CUSTOMER SUCCESS / MVP
           </span>
 
@@ -153,14 +153,14 @@ function Navbar() {
                 }`}
               >
                 <span>
-                  <span className="mr-3 text-neutral-700">
+                  <span className="mr-3 text-neutral-500">
                     0{index + 1}
                   </span>
 
                   {link.label}
                 </span>
 
-                <span className="text-neutral-700">↗</span>
+                <span className="text-neutral-500">↗</span>
               </a>
             );
           })}
