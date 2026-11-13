@@ -40,7 +40,7 @@ function CustomerCard({
 
       <div className="mt-8">
         <div className="flex items-end justify-between">
-          <span className="text-[9px] font-semibold uppercase tracking-[0.16em] text-neutral-600">
+          <span className="text-[9px] font-semibold uppercase tracking-[0.16em] text-neutral-500">
             Health score
           </span>
 
@@ -59,7 +59,7 @@ function CustomerCard({
 
       <div className="mt-6 space-y-4 border-t border-white/10 pt-5">
         <div className="flex items-center justify-between gap-4">
-          <span className="text-xs text-neutral-600">
+          <span className="text-xs text-neutral-500">
             Last contact
           </span>
 
@@ -69,7 +69,7 @@ function CustomerCard({
         </div>
 
         <div className="flex items-center justify-between gap-4">
-          <span className="text-xs text-neutral-600">
+          <span className="text-xs text-neutral-500">
             Next action
           </span>
 
@@ -82,7 +82,7 @@ function CustomerCard({
       <div className="mt-6 border-t border-white/10 pt-5">
         <label
           htmlFor={`health-${customer.id}`}
-          className="mb-2 block text-[9px] font-semibold uppercase tracking-[0.16em] text-neutral-600"
+          className="mb-2 block text-[9px] font-semibold uppercase tracking-[0.16em] text-neutral-500"
         >
           Update health
         </label>
@@ -96,7 +96,7 @@ function CustomerCard({
               event.target.value as CustomerHealth,
             )
           }
-          className="w-full border border-neutral-600 bg-[#080808] px-3 py-2.5 text-xs text-neutral-300 outline-none transition hover:border-neutral-400 focus:border-white/40"
+          className="w-full border border-neutral-500 bg-[#080808] px-3 py-2.5 text-xs text-neutral-300 outline-none transition hover:border-neutral-400 focus:border-white/40"
         >
           <option value="Healthy">Healthy</option>
           <option value="At Risk">At Risk</option>
