@@ -32,7 +32,7 @@ The current project scope is the deployed frontend demonstration. No backend, mu
 - [x] Keep the dashboard usable when browser storage reads or writes fail
 - [x] Add focused Node.js unit tests for validation, fallback, duplicate IDs, blank fields, and storage failures
 - [x] Verify the initial unit-test, lint, and production-build CI run (GitHub Actions run #19 passed)
-- [ ] Verify CI after stricter required-field and ID validation changes
+- [x] Verify CI after stricter required-field and ID validation changes (GitHub Actions run #22 passed)
 - [x] Configure and publish GitHub Pages deployment
 - [x] Add GitHub Actions CI for lint and production build
 - [x] Document MVP scope, limitations, and maintenance status
