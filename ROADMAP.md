@@ -104,3 +104,20 @@ Review date: 2026-11-12
 ## Current direction — 2026-11-12
 
 **MVP complete · Maintenance mode.** No additional platform features are required for the current milestone. Prioritize defect fixes, dependency/CI maintenance, documentation accuracy, and manual browser/accessibility checks. Browser persistence now validates restored records and degrades safely when storage is unavailable. Only reopen deferred backend or workflow ideas if a concrete use case justifies expanding beyond the frontend demonstration.
+
+
+## Accessibility & Responsive Review — 2026-11-13
+
+- [x] Audit live layout at 360px, 768px, and 1440px; no overflow, clipping, or overlap observed.
+- [x] Check keyboard reachability of navigation, search, filters, and health controls.
+- [x] Confirm skip link exists and is keyboard-visible.
+- [x] Move skip link to the first focusable position and place the header outside the main landmark.
+- [x] Keep closed mobile-menu links out of keyboard navigation and the accessibility tree with `inert` and `aria-hidden`.
+- [x] Improve contrast of placeholder text and interactive control borders.
+- [x] Announce filtered account-count updates through a status region.
+- [x] Verify source already has associated labels, one primary h1, and reduced-motion CSS; no unnecessary duplicate fixes.
+- [ ] Run CI on the latest accessibility changes.
+- [ ] After an approved deployment, repeat keyboard and responsive checks against the updated branch.
+- [ ] Perform actual screen-reader testing and measure exact computed contrast and mobile touch-target sizes.
+
+The live audit tested the currently deployed version. The improvements above are on open PR #3 and are not live until separately approved and deployed.
