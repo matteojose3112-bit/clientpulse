@@ -81,3 +81,10 @@ The storage boundary validates saved customer records before they enter applicat
 ## Documentation review — 2026-11-03
 
 ClientPulse remains a deployed, frontend-only MVP in maintenance mode. Its customer records and activity feed are illustrative; edits persist only in the current browser. No backend, authentication, multi-user sync, CRM integration, or automated risk prediction is claimed. Deferred ideas remain optional.
+
+
+## Accessibility & responsive review — 2026-11-13
+
+A live browser audit of the currently deployed site at 360px, 768px, and 1440px found no horizontal overflow, clipping, or overlapping content. Keyboard navigation reached the navigation links, search and filter controls, and customer health selectors; the skip link was present. Source review confirmed that search, filter, and per-customer health controls already have associated labels, the page has a single primary `h1`, and reduced-motion CSS is already implemented. Those were not treated as defects despite inaccurate automated observations in the initial browser report.
+
+The open maintenance branch now improves landmark and keyboard behavior: the skip link is the first focusable page control, the site header sits outside the main landmark, and collapsed mobile navigation links are inert until the menu opens. Search placeholders and form-control borders have stronger contrast, and the filtered-account count is exposed as a polite status update. These changes are on PR #3 and have not been deployed. Screen-reader testing with NVDA/VoiceOver, exact computed contrast measurements, and touch-target measurement remain outstanding.
