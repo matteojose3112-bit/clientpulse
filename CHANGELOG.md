@@ -17,7 +17,7 @@
 ### Verification
 - The earlier lint and production build passed before this test-suite change.
 - GitHub Actions run #19 passed: the initial 10 unit tests, lint, and the production build completed successfully.
-- The expanded 11-test suite and stricter validation changes are awaiting a fresh CI result.
+- GitHub Actions run #22 passed the expanded 11-test suite, lint, and production build after the stricter validation changes.
 - A live smoke test of the currently deployed GitHub Pages build verified rendering, all six sample customer cards, search, health filtering, and in-session status updates. No visible console errors, failed network requests, or broken assets were observed.
 - On the deployed build, a health-status edit reverted after reload. PR #3 remains unmerged and its branch has not been deployed, so the new storage-validation and failure-handling behavior still needs branch-specific browser verification after an approved deployment.
 - Malformed-storage and blocked-write browser scenarios remain unverified manually; those cases are covered by the automated unit tests.
