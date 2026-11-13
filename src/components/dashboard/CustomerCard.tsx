@@ -96,7 +96,7 @@ function CustomerCard({
               event.target.value as CustomerHealth,
             )
           }
-          className="w-full border border-white/10 bg-[#080808] px-3 py-2.5 text-xs text-neutral-300 outline-none transition hover:border-white/25 focus:border-white/40"
+          className="w-full border border-neutral-600 bg-[#080808] px-3 py-2.5 text-xs text-neutral-300 outline-none transition hover:border-neutral-400 focus:border-white/40"
         >
           <option value="Healthy">Healthy</option>
           <option value="At Risk">At Risk</option>
