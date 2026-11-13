@@ -59,6 +59,15 @@ test("validates the complete customer record shape", () => {
   assert.equal(isCustomer(null), false);
 });
 
+test("rejects non-positive IDs and blank required text", () => {
+  assert.equal(isCustomer(validCustomer({ id: 0 })), false);
+  assert.equal(isCustomer(validCustomer({ id: -1 })), false);
+  assert.equal(isCustomer(validCustomer({ name: "  " })), false);
+  assert.equal(isCustomer(validCustomer({ company: "" })), false);
+  assert.equal(isCustomer(validCustomer({ lastContact: " " })), false);
+  assert.equal(isCustomer(validCustomer({ nextAction: "" })), false);
+});
+
 test("uses bundled customers when no saved value exists", () => {
   const fallback = [...customers];
   const storage = createStorage();
