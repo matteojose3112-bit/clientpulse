@@ -4,7 +4,7 @@
 - Moved the skip link to the beginning of the page's keyboard navigation order.
 - Kept the site header/navigation outside the main content landmark.
 - Made the collapsed mobile navigation inert and hidden from assistive technology until opened, preventing hidden links from entering the tab order.
-- Increased contrast for search placeholder text and customer/search/filter controls.
+- Increased contrast for search placeholder text, customer/search/filter controls, and secondary interface text.
 - Announced customer result-count changes through a polite status region.
 
 ### Reviewed
