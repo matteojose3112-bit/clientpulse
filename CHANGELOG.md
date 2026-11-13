@@ -4,18 +4,20 @@
 
 ### Fixed
 - Validate browser-restored customer records before using them in dashboard state.
-- Reject malformed records, unsupported health statuses, invalid score ranges, and duplicate customer IDs.
+- Reject malformed records, unsupported health statuses, invalid score ranges, duplicate customer IDs, non-positive IDs, and blank required text fields.
 - Fall back to the bundled sample portfolio when saved data is invalid or cannot be read.
 - Handle local-storage write failures without breaking dashboard interactions.
 
 ### Tests
 - Extracted customer-storage validation and persistence into a small testable module.
-- Added Node.js unit tests for valid and invalid records, supported health statuses, malformed JSON, non-array data, duplicate IDs, blocked storage reads, successful writes, and failed writes.
+- Added Node.js unit tests for valid and invalid records, supported health statuses, malformed JSON, non-array data, duplicate IDs, blank required fields, blocked storage reads, successful writes, and failed writes.
+- Expanded the suite from 10 to 11 tests after review identified missing coverage for blank required fields and non-positive IDs.
 - Added the unit-test command to CI ahead of lint and production build.
 
 ### Verification
 - The earlier lint and production build passed before this test-suite change.
-- GitHub Actions run #18 passed: all 10 unit tests, lint, and the production build completed successfully.
+- GitHub Actions run #19 passed: the initial 10 unit tests, lint, and the production build completed successfully.
+- The expanded 11-test suite and stricter validation changes are awaiting a fresh CI result.
 - A live smoke test of the currently deployed GitHub Pages build verified rendering, all six sample customer cards, search, health filtering, and in-session status updates. No visible console errors, failed network requests, or broken assets were observed.
 - On the deployed build, a health-status edit reverted after reload. PR #3 remains unmerged and its branch has not been deployed, so the new storage-validation and failure-handling behavior still needs branch-specific browser verification after an approved deployment.
 - Malformed-storage and blocked-write browser scenarios remain unverified manually; those cases are covered by the automated unit tests.
