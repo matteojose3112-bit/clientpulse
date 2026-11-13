@@ -10,8 +10,7 @@ import RiskSummary from "./components/dashboard/RiskSummary";
 
 import { customers as initialCustomers } from "./data/customers";
 import type { Customer, CustomerHealth } from "./data/customers";
-
-const STORAGE_KEY = "clientpulse-customers";
+import { loadCustomers, saveCustomers } from "./data/customerStorage";
 
 type HealthFilter = "All" | CustomerHealth;
 
@@ -21,28 +20,10 @@ const healthScores: Record<CustomerHealth, number> = {
   Critical: 30,
 };
 
-function loadCustomers(): Customer[] {
-  try {
-    const savedCustomers = localStorage.getItem(STORAGE_KEY);
-
-    if (!savedCustomers) {
-      return initialCustomers;
-    }
-
-    const parsedCustomers: unknown = JSON.parse(savedCustomers);
-
-    if (!Array.isArray(parsedCustomers)) {
-      return initialCustomers;
-    }
-
-    return parsedCustomers as Customer[];
-  } catch {
-    return initialCustomers;
-  }
-}
-
 function App() {
-  const [customers, setCustomers] = useState<Customer[]>(loadCustomers);
+  const [customers, setCustomers] = useState<Customer[]>(() =>
+    loadCustomers(() => window.localStorage, initialCustomers),
+  );
   const [searchQuery, setSearchQuery] = useState("");
   const [healthFilter, setHealthFilter] =
     useState<HealthFilter>("All");
@@ -52,7 +33,7 @@ function App() {
    * a page refresh.
    */
   useEffect(() => {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(customers));
+    saveCustomers(() => window.localStorage, customers);
   }, [customers]);
 
   /*
@@ -175,19 +156,21 @@ function App() {
   }, []);
 
   return (
-    <main
-      id="main-content"
-      className="min-h-screen bg-[#050505] text-white selection:bg-white selection:text-black"
-    >
-      <MouseEffects />
-      <Navbar />
-
+    <>
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[200] focus:bg-white focus:px-4 focus:py-3 focus:text-sm focus:font-semibold focus:text-black"
       >
         Skip to content
       </a>
+
+      <MouseEffects />
+      <Navbar />
+
+      <main
+        id="main-content"
+        className="min-h-screen bg-[#050505] text-white selection:bg-white selection:text-black"
+      >
 
       {/* =====================================================
           HERO / DASHBOARD INTRO
@@ -232,7 +215,7 @@ function App() {
 
             <h1 className="max-w-6xl text-[clamp(3.8rem,9vw,9rem)] font-semibold leading-[0.86] tracking-[-0.065em] text-white">
               ClientPulse
-              <span className="text-neutral-600">.</span>
+              <span className="text-neutral-500">.</span>
             </h1>
 
             <div className="mt-10 max-w-4xl">
@@ -254,7 +237,7 @@ function App() {
                   customer data into better-informed retention decisions.
                 </p>
 
-                <div className="mt-6 flex flex-wrap gap-x-4 gap-y-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-neutral-600">
+                <div className="mt-6 flex flex-wrap gap-x-4 gap-y-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-neutral-500">
                   <span>CRM</span>
                   <span>Health Scoring</span>
                   <span>Automation</span>
@@ -286,7 +269,7 @@ function App() {
             </div>
           </div>
 
-          <div className="mt-20 flex items-center justify-between border-t border-white/10 pt-5 text-[10px] uppercase tracking-[0.2em] text-neutral-600">
+          <div className="mt-20 flex items-center justify-between border-t border-white/10 pt-5 text-[10px] uppercase tracking-[0.2em] text-neutral-500">
             <span>01 / ClientPulse</span>
 
             <a
@@ -380,7 +363,11 @@ function App() {
               </h2>
             </div>
 
-            <span className="text-xs uppercase tracking-[0.16em] text-neutral-600">
+            <span
+              role="status"
+              aria-atomic="true"
+              className="text-xs uppercase tracking-[0.16em] text-neutral-500"
+            >
               {filteredCustomers.length} of{" "}
               {totalCustomers} accounts
             </span>
@@ -400,7 +387,7 @@ function App() {
                   setSearchQuery(event.target.value)
                 }
                 placeholder="Search by customer or company..."
-                className="w-full border border-white/10 bg-[#080808] px-4 py-3 text-sm text-white outline-none transition placeholder:text-neutral-700 hover:border-white/20 focus:border-white/40"
+                className="w-full border border-neutral-500 bg-[#080808] px-4 py-3 text-sm text-white outline-none transition placeholder:text-neutral-400 hover:border-neutral-400 focus:border-white/40"
               />
             </label>
 
@@ -416,7 +403,7 @@ function App() {
                     event.target.value as HealthFilter,
                   )
                 }
-                className="w-full border border-white/10 bg-[#080808] px-4 py-3 text-sm text-neutral-300 outline-none transition hover:border-white/20 focus:border-white/40 md:min-w-[180px]"
+                className="w-full border border-neutral-500 bg-[#080808] px-4 py-3 text-sm text-neutral-300 outline-none transition hover:border-neutral-400 focus:border-white/40 md:min-w-[180px]"
               >
                 <option value="All">
                   All health statuses
@@ -480,7 +467,8 @@ function App() {
           <ActivityFeed />
         </div>
       </section>
-    </main>
+      </main>
+    </>
   );
 }
 

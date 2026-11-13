@@ -55,7 +55,7 @@ function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-10">
+      <nav aria-label="Primary" className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-10">
         <a
           href="#dashboard"
           onClick={closeMenu}
@@ -86,7 +86,7 @@ function Navbar() {
               >
                 <span
                   className={`mr-2 ${
-                    isActive ? "text-neutral-400" : "text-neutral-700"
+                    isActive ? "text-neutral-400" : "text-neutral-500"
                   }`}
                 >
                   0{index + 1}
@@ -99,7 +99,7 @@ function Navbar() {
         </div>
 
         <div className="flex items-center gap-3">
-          <span className="hidden text-[10px] uppercase tracking-[0.16em] text-neutral-600 sm:block">
+          <span className="hidden text-[10px] uppercase tracking-[0.16em] text-neutral-500 sm:block">
             CUSTOMER SUCCESS / MVP
           </span>
 
@@ -128,6 +128,8 @@ function Navbar() {
 
       <div
         id="mobile-menu"
+        inert={!menuOpen}
+        aria-hidden={!menuOpen}
         className={`border-t border-white/10 bg-[#050505]/95 backdrop-blur-xl transition-all duration-300 md:hidden ${
           menuOpen
             ? "max-h-[30rem] opacity-100"
@@ -151,14 +153,14 @@ function Navbar() {
                 }`}
               >
                 <span>
-                  <span className="mr-3 text-neutral-700">
+                  <span className="mr-3 text-neutral-500">
                     0{index + 1}
                   </span>
 
                   {link.label}
                 </span>
 
-                <span className="text-neutral-700">↗</span>
+                <span className="text-neutral-500">↗</span>
               </a>
             );
           })}
