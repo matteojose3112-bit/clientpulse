@@ -363,7 +363,11 @@ function App() {
               </h2>
             </div>
 
-            <span className="text-xs uppercase tracking-[0.16em] text-neutral-600">
+            <span
+              role="status"
+              aria-atomic="true"
+              className="text-xs uppercase tracking-[0.16em] text-neutral-600"
+            >
               {filteredCustomers.length} of{" "}
               {totalCustomers} accounts
             </span>
@@ -383,7 +387,7 @@ function App() {
                   setSearchQuery(event.target.value)
                 }
                 placeholder="Search by customer or company..."
-                className="w-full border border-white/10 bg-[#080808] px-4 py-3 text-sm text-white outline-none transition placeholder:text-neutral-700 hover:border-white/20 focus:border-white/40"
+                className="w-full border border-neutral-600 bg-[#080808] px-4 py-3 text-sm text-white outline-none transition placeholder:text-neutral-400 hover:border-neutral-400 focus:border-white/40"
               />
             </label>
 
@@ -399,7 +403,7 @@ function App() {
                     event.target.value as HealthFilter,
                   )
                 }
-                className="w-full border border-white/10 bg-[#080808] px-4 py-3 text-sm text-neutral-300 outline-none transition hover:border-white/20 focus:border-white/40 md:min-w-[180px]"
+                className="w-full border border-neutral-600 bg-[#080808] px-4 py-3 text-sm text-neutral-300 outline-none transition hover:border-neutral-400 focus:border-white/40 md:min-w-[180px]"
               >
                 <option value="All">
                   All health statuses
