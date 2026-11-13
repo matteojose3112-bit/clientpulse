@@ -23,7 +23,7 @@ function RiskSummary({ customers }: RiskSummaryProps) {
             Accounts needing attention.
           </h3>
 
-          <span className="text-[10px] uppercase tracking-[0.16em] text-neutral-600">
+          <span className="text-[10px] uppercase tracking-[0.16em] text-neutral-500">
             {sortedCustomers.length} flagged
           </span>
         </div>
@@ -46,7 +46,7 @@ function RiskSummary({ customers }: RiskSummaryProps) {
                   {customer.company}
                 </p>
 
-                <p className="mt-1 text-xs text-neutral-600">
+                <p className="mt-1 text-xs text-neutral-500">
                   {customer.nextAction}
                 </p>
               </div>
@@ -61,7 +61,7 @@ function RiskSummary({ customers }: RiskSummaryProps) {
                 </span>
 
                 <span
-                  className="text-neutral-600 transition group-hover:text-white"
+                  className="text-neutral-500 transition group-hover:text-white"
                   aria-hidden="true"
                 >
                   ↗
