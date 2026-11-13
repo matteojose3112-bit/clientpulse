@@ -32,7 +32,7 @@ The current project scope is the deployed frontend demonstration. No backend, mu
 - [x] Keep the dashboard usable when browser storage reads or writes fail
 - [x] Add focused Node.js unit tests for validation, fallback, duplicate IDs, blank fields, and storage failures
 - [x] Verify the initial unit-test, lint, and production-build CI run (GitHub Actions run #19 passed)
-- [x] Verify CI after stricter required-field and ID validation changes (GitHub Actions run #22 passed)
+- [x] Verify CI after stricter required-field and ID validation changes (GitHub Actions run #24 passed on PR head `7b0a5f6`)
 - [x] Configure and publish GitHub Pages deployment
 - [x] Add GitHub Actions CI for lint and production build
 - [x] Document MVP scope, limitations, and maintenance status
@@ -82,6 +82,14 @@ Maintenance may include:
 - Addressing clear accessibility or responsive-layout defects
 
 Manual browser smoke testing of the currently deployed GitHub Pages build confirmed rendering, customer list visibility, search, health filtering, and in-session status updates, with no visible console or network errors. A status edit reverted after reload on that deployed build. PR #3 remains unmerged, so the updated storage-validation code has not yet been deployed and its persistence behavior is not verified live. Mobile/tablet coverage beyond the browser session, keyboard-only interaction, and rendered contrast review remain pending.
+
+## Current PR Review State — 2026-11-12
+
+- PR #3 is open, draft, and mergeable; its latest head commit is `7b0a5f6`.
+- GitHub Actions run #24 passed the 11 unit tests, lint, and production build for that commit.
+- No submitted PR reviews or inline review threads were present at the time of review.
+- The next gated milestone is human review and approval. Do not mark the PR ready, merge it, or deploy it without explicit approval.
+- After an approved merge/deployment, perform branch-specific browser checks for persistence, malformed saved data, and storage write failures.
 
 ## Guiding Principle
 
