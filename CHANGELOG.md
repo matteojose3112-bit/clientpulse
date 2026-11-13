@@ -1,3 +1,24 @@
+## [0.7.2] — Accessibility & Responsive Refinement — 2026-11-13
+
+### Improved
+- Moved the skip link to the beginning of the page's keyboard navigation order.
+- Kept the site header/navigation outside the main content landmark.
+- Made the collapsed mobile navigation inert and hidden from assistive technology until opened, preventing hidden links from entering the tab order.
+- Increased contrast for search placeholder text and customer/search/filter controls.
+- Announced customer result-count changes through a polite status region.
+
+### Reviewed
+- Live responsive audit at 360px, 768px, and 1440px found no horizontal overflow, clipping, or overlap.
+- Keyboard audit confirmed that navigation and form controls were reachable and the skip link was present.
+- Cross-checked automated findings against source: search, filter, and health selectors already had associated labels; the page already used one primary h1; and reduced-motion support was already implemented. These were not changed unnecessarily.
+
+### Verification
+- Source changes are on PR #3; CI for the latest commit is pending.
+- Live browser audit covered the currently deployed site, not the unmerged branch. Branch-specific browser verification requires an approved deployment.
+- Actual screen-reader testing, precise computed contrast measurement, and touch-target measurement remain outstanding.
+
+---
+
 # Changelog
 
 ## [0.7.1] — Browser Storage Resilience — 2026-11-11
