@@ -27,7 +27,7 @@ The MVP is intentionally limited to a single browser experience with sample data
 - Risk summary ordered by health score
 - Static sample activity feed
 - Browser local-storage persistence for customer changes
-- Runtime validation of restored customer records, including required fields, health values, score bounds, and unique IDs
+- Runtime validation of restored customer records, including non-empty required fields, positive safe-integer IDs, health values, score bounds, and unique IDs
 - Graceful fallback when browser storage is malformed, unavailable, or write-protected
 - Responsive dashboard interface
 - Reusable React components and TypeScript data modeling
@@ -76,7 +76,7 @@ Building practical software through hands-on learning, experimentation, and AI-a
 
 ## Maintenance update — 2026-11-11
 
-The storage boundary now validates saved customer records before they enter application state. Invalid or duplicate records fall back to the bundled sample portfolio, and storage read/write failures do not prevent the dashboard from rendering. Ten focused Node.js tests pass in GitHub Actions, alongside lint and the production build. A browser smoke test of the currently deployed GitHub Pages version confirmed that the dashboard, customer list, search, filters, and in-session health updates work without visible console or network errors. The deployed version did not retain a health edit after reload; because PR #3 is still unmerged and has not been deployed, its updated storage behavior has not yet been verified in the live site. Persistence remains browser-local and best-effort; this does not add server-side backup or multi-user synchronization.
+The storage boundary now validates saved customer records before they enter application state. Invalid or duplicate records fall back to the bundled sample portfolio, and storage read/write failures do not prevent the dashboard from rendering. Eleven focused Node.js tests cover storage validation and failure handling. The latest expanded test suite is awaiting its CI run; the previous CI run passed all 10 tests, lint, and the production build. A browser smoke test of the currently deployed GitHub Pages version confirmed that the dashboard, customer list, search, filters, and in-session health updates work without visible console or network errors. The deployed version did not retain a health edit after reload; because PR #3 is still unmerged and has not been deployed, its updated storage behavior has not yet been verified in the live site. Persistence remains browser-local and best-effort; this does not add server-side backup or multi-user synchronization.
 
 ## Documentation review — 2026-11-03
 
