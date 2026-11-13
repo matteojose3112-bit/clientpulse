@@ -14,15 +14,20 @@ export function isCustomer(value: unknown): value is Customer {
 
   return (
     Number.isSafeInteger(customer.id) &&
+    (customer.id as number) > 0 &&
     typeof customer.name === "string" &&
+    customer.name.trim().length > 0 &&
     typeof customer.company === "string" &&
+    customer.company.trim().length > 0 &&
     isCustomerHealth(customer.health) &&
     typeof customer.healthScore === "number" &&
     Number.isFinite(customer.healthScore) &&
     customer.healthScore >= 0 &&
     customer.healthScore <= 100 &&
     typeof customer.lastContact === "string" &&
-    typeof customer.nextAction === "string"
+    customer.lastContact.trim().length > 0 &&
+    typeof customer.nextAction === "string" &&
+    customer.nextAction.trim().length > 0
   );
 }
 
