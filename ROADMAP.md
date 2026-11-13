@@ -113,7 +113,7 @@ Review date: 2026-11-12
 - [x] Confirm skip link exists and is keyboard-visible.
 - [x] Move skip link to the first focusable position and place the header outside the main landmark.
 - [x] Keep closed mobile-menu links out of keyboard navigation and the accessibility tree with `inert` and `aria-hidden`.
-- [x] Improve contrast of placeholder text and interactive control borders.
+- [x] Improve contrast of placeholder text, interactive control borders, and secondary interface text.
 - [x] Announce filtered account-count updates through a status region.
 - [x] Verify source already has associated labels, one primary h1, and reduced-motion CSS; no unnecessary duplicate fixes.
 - [ ] Run CI on the latest accessibility changes.
