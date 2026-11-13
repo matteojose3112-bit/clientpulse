@@ -37,7 +37,7 @@ function ActivityFeed() {
               </div>
             </div>
 
-            <span className="shrink-0 text-[10px] uppercase tracking-[0.14em] text-neutral-700">
+            <span className="shrink-0 text-[10px] uppercase tracking-[0.14em] text-neutral-500">
               {activity.time}
             </span>
           </div>
