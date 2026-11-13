@@ -28,10 +28,11 @@ The current project scope is the deployed frontend demonstration. No backend, mu
 - [x] Add empty-state handling and filter reset
 - [x] Persist customer changes in browser local storage
 - [x] Validate restored records before using browser-saved customer data
-- [x] Reject duplicate IDs, invalid health statuses, malformed fields, and out-of-range scores
+- [x] Reject duplicate or non-positive IDs, blank required fields, invalid health statuses, malformed fields, and out-of-range scores
 - [x] Keep the dashboard usable when browser storage reads or writes fail
-- [x] Add focused Node.js unit tests for validation, fallback, duplicate IDs, and storage failures
-- [x] Verify the new unit-test, lint, and production-build CI run (GitHub Actions run #18 passed)
+- [x] Add focused Node.js unit tests for validation, fallback, duplicate IDs, blank fields, and storage failures
+- [x] Verify the initial unit-test, lint, and production-build CI run (GitHub Actions run #19 passed)
+- [ ] Verify CI after stricter required-field and ID validation changes
 - [x] Configure and publish GitHub Pages deployment
 - [x] Add GitHub Actions CI for lint and production build
 - [x] Document MVP scope, limitations, and maintenance status
