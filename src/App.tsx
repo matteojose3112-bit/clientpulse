@@ -156,19 +156,21 @@ function App() {
   }, []);
 
   return (
-    <main
-      id="main-content"
-      className="min-h-screen bg-[#050505] text-white selection:bg-white selection:text-black"
-    >
-      <MouseEffects />
-      <Navbar />
-
+    <>
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[200] focus:bg-white focus:px-4 focus:py-3 focus:text-sm focus:font-semibold focus:text-black"
       >
         Skip to content
       </a>
+
+      <MouseEffects />
+      <Navbar />
+
+      <main
+        id="main-content"
+        className="min-h-screen bg-[#050505] text-white selection:bg-white selection:text-black"
+      >
 
       {/* =====================================================
           HERO / DASHBOARD INTRO
@@ -461,7 +463,8 @@ function App() {
           <ActivityFeed />
         </div>
       </section>
-    </main>
+      </main>
+    </>
   );
 }
 
