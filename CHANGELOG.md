@@ -13,7 +13,7 @@
 - Cross-checked automated findings against source: search, filter, and health selectors already had associated labels; the page already used one primary h1; and reduced-motion support was already implemented. These were not changed unnecessarily.
 
 ### Verification
-- Source changes are on PR #3; CI for the latest commit is pending.
+- Source changes are on PR #3; GitHub Actions runs #32 and #33 passed unit tests, lint, and production build on the latest accessibility source commits. A later commit only synchronized documentation.
 - Live browser audit covered the currently deployed site, not the unmerged branch. Branch-specific browser verification requires an approved deployment.
 - Actual screen-reader testing, precise computed contrast measurement, and touch-target measurement remain outstanding.
 
