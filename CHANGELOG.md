@@ -1,3 +1,17 @@
+## [0.7.3] — Secondary Text Contrast Refinement — 2026-11-17
+
+### Improved
+- Raised remaining small secondary text tokens to a lighter neutral on the near-black dashboard surface.
+- Updated the custom section-label text color to match the improved contrast treatment.
+- Kept decorative separators and status accents unchanged.
+
+### Verification
+- Source-level token review completed across the app shell, navigation, and dashboard components.
+- Rendered contrast measurements, screen-reader testing, and touch-target measurements remain outstanding.
+- Changes are on the existing PR #3 branch and have not been deployed.
+
+---
+
 ## [0.7.2] — Accessibility & Responsive Refinement — 2026-11-13
 
 ### Improved
