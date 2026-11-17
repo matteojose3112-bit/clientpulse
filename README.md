@@ -93,6 +93,8 @@ The open maintenance branch now improves landmark and keyboard behavior: the ski
 
 A follow-up source review found that some small secondary labels still used Tailwind `text-neutral-500` on the near-black dashboard surface. These text tokens have been raised to `text-neutral-400` across the application and reusable dashboard components, and the custom section-label color has been updated to the matching neutral value. Decorative separators and status accents remain unchanged. This is a source-level contrast improvement; final WCAG conformance still requires checking the rendered color combinations and testing with assistive technology.
 
+The mobile navigation toggle has also been increased to a 44 × 44 CSS-pixel target. Its mobile menu links and primary calls to action have padded hit areas. Physical-device touch testing and screen-reader testing remain outstanding. GitHub Actions run #40 passed all 11 unit tests, lint, and production build on the preceding contrast-refinement commit; the subsequent touch-target change still requires its own CI result.
+
 ## Mobile touch-target refinement — 2026-11-17
 
 The mobile navigation toggle now has a 44 × 44 CSS-pixel target. Mobile navigation links and primary calls to action already have larger padded/minimum-height hit areas. This is a source-level sizing check; physical-device testing remains outstanding.
