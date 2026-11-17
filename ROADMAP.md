@@ -121,3 +121,13 @@ Review date: 2026-11-12
 - [ ] Perform actual screen-reader testing and measure exact computed contrast and mobile touch-target sizes.
 
 The live audit tested the currently deployed version. The improvements above are on open PR #3 and are not live until separately approved and deployed.
+
+## Follow-up Accessibility Refinement — 2026-11-17
+
+- [x] Raise remaining small secondary text from `text-neutral-500` to `text-neutral-400` across the application and dashboard components.
+- [x] Raise the custom section-label text color to the matching neutral value.
+- [ ] Measure rendered contrast ratios for all text/background combinations at runtime.
+- [ ] Complete NVDA/VoiceOver screen-reader checks and mobile touch-target measurements.
+- [ ] After explicit deployment approval, repeat browser checks against the updated PR branch.
+
+The source-token adjustment improves contrast on the near-black interface, but it is not a claim of full WCAG conformance. Manual rendered verification remains outstanding.
