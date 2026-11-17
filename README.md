@@ -98,3 +98,7 @@ The mobile navigation toggle has also been increased to a 44 × 44 CSS-pixel tar
 ## Mobile touch-target refinement — 2026-11-17
 
 The mobile navigation toggle now has a 44 × 44 CSS-pixel target. Mobile navigation links and primary calls to action already have larger padded/minimum-height hit areas. This is a source-level sizing check; physical-device testing remains outstanding.
+
+## Reduced-motion refinement — 2026-11-17
+
+The custom pointer-follow cursor and magnetic pointer movement now remain inactive when the operating system or browser requests reduced motion. The CSS cursor override is also limited to users who have not requested reduced motion, preserving the native pointer in that mode. This is a source-level preference check; changing the system preference during an already-open session and assistive-technology behavior still warrant manual verification. CI for this change is pending.
