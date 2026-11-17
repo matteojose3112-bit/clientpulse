@@ -137,3 +137,12 @@ The live audit tested the currently deployed version. The improvements above are
 The source-token adjustment improves contrast on the near-black interface, but it is not a claim of full WCAG conformance. Manual rendered verification remains outstanding.
 
 Source inspection confirms the mobile menu toggle is 44 × 44 CSS pixels. This does not replace physical-device testing of spacing and touch behavior.
+
+## Reduced-motion Follow-up — 2026-11-17
+
+- [x] Disable JavaScript cursor-follow and magnetic pointer effects when `prefers-reduced-motion: reduce` is active at page load.
+- [x] Restrict the CSS custom-cursor override to `prefers-reduced-motion: no-preference`, preserving the native cursor for reduced-motion users.
+- [ ] Verify behavior manually with reduced motion enabled and disabled, including changing the preference during an open session.
+- [ ] Confirm CI passes on the latest PR head.
+
+This is a source-level accommodation, not a substitute for manual assistive-technology and browser verification.
