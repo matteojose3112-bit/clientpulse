@@ -109,7 +109,7 @@ function Navbar() {
             aria-controls="mobile-menu"
             aria-label={menuOpen ? "Close navigation" : "Open navigation"}
             onClick={() => setMenuOpen((open) => !open)}
-            className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 border border-white/15 md:hidden"
+            className="flex h-11 w-11 flex-col items-center justify-center gap-1.5 border border-white/15 md:hidden"
           >
             <span
               className={`h-px w-4 bg-white transition ${
