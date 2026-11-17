@@ -22,7 +22,7 @@ function ActivityFeed() {
 
               <div>
                 <div className="flex flex-wrap items-center gap-3">
-                  <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-neutral-500">
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-neutral-400">
                     {activity.type}
                   </span>
 
@@ -31,13 +31,13 @@ function ActivityFeed() {
                   </span>
                 </div>
 
-                <p className="mt-2 text-sm text-neutral-500">
+                <p className="mt-2 text-sm text-neutral-400">
                   {activity.description}
                 </p>
               </div>
             </div>
 
-            <span className="shrink-0 text-[10px] uppercase tracking-[0.14em] text-neutral-500">
+            <span className="shrink-0 text-[10px] uppercase tracking-[0.14em] text-neutral-400">
               {activity.time}
             </span>
           </div>
