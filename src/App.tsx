@@ -191,7 +191,7 @@ function App() {
 
         <div className="relative mx-auto w-full max-w-7xl">
           <div className="pulse-reveal max-w-6xl">
-            <div className="mb-8 flex flex-wrap items-center gap-x-5 gap-y-3 text-xs uppercase tracking-[0.2em] text-neutral-500">
+            <div className="mb-8 flex flex-wrap items-center gap-x-5 gap-y-3 text-xs uppercase tracking-[0.2em] text-neutral-400">
               <span className="flex items-center gap-3">
                 <span
                   className="pulse-status-dot"
@@ -215,7 +215,7 @@ function App() {
 
             <h1 className="max-w-6xl text-[clamp(3.8rem,9vw,9rem)] font-semibold leading-[0.86] tracking-[-0.065em] text-white">
               ClientPulse
-              <span className="text-neutral-500">.</span>
+              <span className="text-neutral-400">.</span>
             </h1>
 
             <div className="mt-10 max-w-4xl">
@@ -230,14 +230,14 @@ function App() {
 
             <div className="mt-10 grid gap-8 border-t border-white/10 pt-8 lg:grid-cols-[1fr_auto] lg:items-end">
               <div>
-                <p className="max-w-2xl text-base leading-7 text-neutral-500 md:text-lg">
+                <p className="max-w-2xl text-base leading-7 text-neutral-400 md:text-lg">
                   A customer-success workspace
                   to monitor account health, surface
                   risk, coordinate follow-ups, and turn
                   customer data into better-informed retention decisions.
                 </p>
 
-                <div className="mt-6 flex flex-wrap gap-x-4 gap-y-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-neutral-500">
+                <div className="mt-6 flex flex-wrap gap-x-4 gap-y-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-neutral-400">
                   <span>CRM</span>
                   <span>Health Scoring</span>
                   <span>Automation</span>
@@ -269,7 +269,7 @@ function App() {
             </div>
           </div>
 
-          <div className="mt-20 flex items-center justify-between border-t border-white/10 pt-5 text-[10px] uppercase tracking-[0.2em] text-neutral-500">
+          <div className="mt-20 flex items-center justify-between border-t border-white/10 pt-5 text-[10px] uppercase tracking-[0.2em] text-neutral-400">
             <span>01 / ClientPulse</span>
 
             <a
@@ -366,7 +366,7 @@ function App() {
             <span
               role="status"
               aria-atomic="true"
-              className="text-xs uppercase tracking-[0.16em] text-neutral-500"
+              className="text-xs uppercase tracking-[0.16em] text-neutral-400"
             >
               {filteredCustomers.length} of{" "}
               {totalCustomers} accounts
@@ -427,7 +427,7 @@ function App() {
           {/* Customer results */}
           {filteredCustomers.length === 0 ? (
             <div className="pulse-card mt-8 p-10 text-center">
-              <p className="text-sm text-neutral-500">
+              <p className="text-sm text-neutral-400">
                 No accounts match your current search or health filter.
               </p>
 
