@@ -26,7 +26,7 @@ function CustomerCard({
             {customer.company}
           </h3>
 
-          <p className="mt-1 text-sm text-neutral-500">
+          <p className="mt-1 text-sm text-neutral-400">
             {customer.name}
           </p>
         </div>
@@ -40,7 +40,7 @@ function CustomerCard({
 
       <div className="mt-8">
         <div className="flex items-end justify-between">
-          <span className="text-[9px] font-semibold uppercase tracking-[0.16em] text-neutral-500">
+          <span className="text-[9px] font-semibold uppercase tracking-[0.16em] text-neutral-400">
             Health score
           </span>
 
@@ -59,7 +59,7 @@ function CustomerCard({
 
       <div className="mt-6 space-y-4 border-t border-white/10 pt-5">
         <div className="flex items-center justify-between gap-4">
-          <span className="text-xs text-neutral-500">
+          <span className="text-xs text-neutral-400">
             Last contact
           </span>
 
@@ -69,7 +69,7 @@ function CustomerCard({
         </div>
 
         <div className="flex items-center justify-between gap-4">
-          <span className="text-xs text-neutral-500">
+          <span className="text-xs text-neutral-400">
             Next action
           </span>
 
@@ -82,7 +82,7 @@ function CustomerCard({
       <div className="mt-6 border-t border-white/10 pt-5">
         <label
           htmlFor={`health-${customer.id}`}
-          className="mb-2 block text-[9px] font-semibold uppercase tracking-[0.16em] text-neutral-500"
+          className="mb-2 block text-[9px] font-semibold uppercase tracking-[0.16em] text-neutral-400"
         >
           Update health
         </label>
