@@ -81,12 +81,12 @@ function Navbar() {
                 className={`text-xs font-medium uppercase tracking-[0.16em] transition ${
                   isActive
                     ? "text-white"
-                    : "text-neutral-500 hover:text-white"
+                    : "text-neutral-400 hover:text-white"
                 }`}
               >
                 <span
                   className={`mr-2 ${
-                    isActive ? "text-neutral-400" : "text-neutral-500"
+                    isActive ? "text-neutral-400" : "text-neutral-400"
                   }`}
                 >
                   0{index + 1}
@@ -99,7 +99,7 @@ function Navbar() {
         </div>
 
         <div className="flex items-center gap-3">
-          <span className="hidden text-[10px] uppercase tracking-[0.16em] text-neutral-500 sm:block">
+          <span className="hidden text-[10px] uppercase tracking-[0.16em] text-neutral-400 sm:block">
             CUSTOMER SUCCESS / MVP
           </span>
 
@@ -149,18 +149,18 @@ function Navbar() {
                 className={`flex items-center justify-between border-b border-white/10 py-4 text-sm uppercase tracking-[0.16em] transition ${
                   isActive
                     ? "text-white"
-                    : "text-neutral-500 hover:text-white"
+                    : "text-neutral-400 hover:text-white"
                 }`}
               >
                 <span>
-                  <span className="mr-3 text-neutral-500">
+                  <span className="mr-3 text-neutral-400">
                     0{index + 1}
                   </span>
 
                   {link.label}
                 </span>
 
-                <span className="text-neutral-500">↗</span>
+                <span className="text-neutral-400">↗</span>
               </a>
             );
           })}
