@@ -27,10 +27,13 @@ The MVP is intentionally limited to a single browser experience with sample data
 - Risk summary ordered by health score
 - Static sample activity feed
 - Browser local-storage persistence for customer changes
+- Runtime validation of restored customer records, including non-empty required fields, positive safe-integer IDs, health values, score bounds, and unique IDs
+- Graceful fallback when browser storage is malformed, unavailable, or write-protected
 - Responsive dashboard interface
 - Reusable React components and TypeScript data modeling
 - GitHub Pages deployment
-- GitHub Actions CI for linting and production builds
+- Focused Node.js unit tests for customer-storage validation and failure handling (`npm test`)
+- GitHub Actions CI for unit tests, linting, and production builds
 
 ## Scope and Limitations
 
@@ -71,6 +74,31 @@ The project follows:
 
 Building practical software through hands-on learning, experimentation, and AI-assisted development.
 
+## Maintenance update — 2026-11-12
+
+The storage boundary validates saved customer records before they enter application state. Invalid or duplicate records fall back to the bundled sample portfolio, and storage read/write failures do not prevent the dashboard from rendering. Eleven focused Node.js tests cover storage validation and failure handling. GitHub Actions run #24 passed all 11 tests, lint, and the production build on the current PR head commit (`7b0a5f6`). The PR remains open and in draft; it has no submitted reviews or inline review threads. A browser smoke test of the currently deployed GitHub Pages version confirmed that the dashboard, customer list, search, filters, and in-session health updates work without visible console or network errors. The deployed version did not retain a health edit after reload; because PR #3 is still unmerged and has not been deployed, its updated storage behavior has not yet been verified in the live site. Persistence remains browser-local and best-effort; this does not add server-side backup or multi-user synchronization.
+
 ## Documentation review — 2026-11-03
 
-Documentation review — 2026-11-03: ClientPulse remains a deployed, frontend-only MVP in maintenance mode. Its customer records and activity feed are illustrative; edits persist only in the current browser. No backend, authentication, multi-user sync, CRM integration, or automated risk prediction is claimed. Deferred ideas remain optional.
+ClientPulse remains a deployed, frontend-only MVP in maintenance mode. Its customer records and activity feed are illustrative; edits persist only in the current browser. No backend, authentication, multi-user sync, CRM integration, or automated risk prediction is claimed. Deferred ideas remain optional.
+
+
+## Accessibility & responsive review — 2026-11-13
+
+A live browser audit of the currently deployed site at 360px, 768px, and 1440px found no horizontal overflow, clipping, or overlapping content. Keyboard navigation reached the navigation links, search and filter controls, and customer health selectors; the skip link was present. Source review confirmed that search, filter, and per-customer health controls already have associated labels, the page has a single primary `h1`, and reduced-motion CSS is already implemented. Those were not treated as defects despite inaccurate automated observations in the initial browser report.
+
+The open maintenance branch now improves landmark and keyboard behavior: the skip link is the first focusable page control, the site header sits outside the main landmark, and collapsed mobile navigation links are inert until the menu opens. Search placeholders, form-control borders, and secondary interface text have stronger contrast, and the filtered-account count is exposed as a polite status update. These changes are on PR #3 and have not been deployed. GitHub Actions runs #32 and #33 passed unit tests, lint, and production build on the latest accessibility source commits; the subsequent commit only synchronized documentation. Screen-reader testing with NVDA/VoiceOver, exact computed contrast measurements, and touch-target measurement remain outstanding.
+
+## Contrast refinement — 2026-11-17
+
+A follow-up source review found that some small secondary labels still used Tailwind `text-neutral-500` on the near-black dashboard surface. These text tokens have been raised to `text-neutral-400` across the application and reusable dashboard components, and the custom section-label color has been updated to the matching neutral value. Decorative separators and status accents remain unchanged. This is a source-level contrast improvement; final WCAG conformance still requires checking the rendered color combinations and testing with assistive technology.
+
+The mobile navigation toggle has also been increased to a 44 × 44 CSS-pixel target. Its mobile menu links and primary calls to action have padded hit areas. Physical-device touch testing and screen-reader testing remain outstanding. GitHub Actions run #40 passed all 11 unit tests, lint, and production build on the preceding contrast-refinement commit; the subsequent touch-target change still requires its own CI result.
+
+## Mobile touch-target refinement — 2026-11-17
+
+The mobile navigation toggle now has a 44 × 44 CSS-pixel target. Mobile navigation links and primary calls to action already have larger padded/minimum-height hit areas. This is a source-level sizing check; physical-device testing remains outstanding.
+
+## Reduced-motion refinement — 2026-11-17
+
+The custom pointer-follow cursor and magnetic pointer movement now remain inactive when the operating system or browser requests reduced motion. The CSS cursor override is also limited to users who have not requested reduced motion, preserving the native pointer in that mode. This is a source-level preference check; changing the system preference during an already-open session and assistive-technology behavior still warrant manual verification. CI for this change is pending.

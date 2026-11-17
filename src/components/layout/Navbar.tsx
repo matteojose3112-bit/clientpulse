@@ -55,7 +55,7 @@ function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-10">
+      <nav aria-label="Primary" className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-10">
         <a
           href="#dashboard"
           onClick={closeMenu}
@@ -81,12 +81,12 @@ function Navbar() {
                 className={`text-xs font-medium uppercase tracking-[0.16em] transition ${
                   isActive
                     ? "text-white"
-                    : "text-neutral-500 hover:text-white"
+                    : "text-neutral-400 hover:text-white"
                 }`}
               >
                 <span
                   className={`mr-2 ${
-                    isActive ? "text-neutral-400" : "text-neutral-700"
+                    isActive ? "text-neutral-400" : "text-neutral-400"
                   }`}
                 >
                   0{index + 1}
@@ -99,7 +99,7 @@ function Navbar() {
         </div>
 
         <div className="flex items-center gap-3">
-          <span className="hidden text-[10px] uppercase tracking-[0.16em] text-neutral-600 sm:block">
+          <span className="hidden text-[10px] uppercase tracking-[0.16em] text-neutral-400 sm:block">
             CUSTOMER SUCCESS / MVP
           </span>
 
@@ -109,7 +109,7 @@ function Navbar() {
             aria-controls="mobile-menu"
             aria-label={menuOpen ? "Close navigation" : "Open navigation"}
             onClick={() => setMenuOpen((open) => !open)}
-            className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 border border-white/15 md:hidden"
+            className="flex h-11 w-11 flex-col items-center justify-center gap-1.5 border border-white/15 md:hidden"
           >
             <span
               className={`h-px w-4 bg-white transition ${
@@ -128,6 +128,8 @@ function Navbar() {
 
       <div
         id="mobile-menu"
+        inert={!menuOpen}
+        aria-hidden={!menuOpen}
         className={`border-t border-white/10 bg-[#050505]/95 backdrop-blur-xl transition-all duration-300 md:hidden ${
           menuOpen
             ? "max-h-[30rem] opacity-100"
@@ -147,18 +149,18 @@ function Navbar() {
                 className={`flex items-center justify-between border-b border-white/10 py-4 text-sm uppercase tracking-[0.16em] transition ${
                   isActive
                     ? "text-white"
-                    : "text-neutral-500 hover:text-white"
+                    : "text-neutral-400 hover:text-white"
                 }`}
               >
                 <span>
-                  <span className="mr-3 text-neutral-700">
+                  <span className="mr-3 text-neutral-400">
                     0{index + 1}
                   </span>
 
                   {link.label}
                 </span>
 
-                <span className="text-neutral-700">↗</span>
+                <span className="text-neutral-400">↗</span>
               </a>
             );
           })}
