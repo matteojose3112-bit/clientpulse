@@ -1,3 +1,15 @@
+## [0.7.5] — Reduced-Motion Pointer Effects — 2026-11-17
+
+### Improved
+- Disable custom pointer-follow and magnetic pointer effects when reduced motion is requested at page load.
+- Limit the CSS custom-cursor override to users who have not requested reduced motion, preserving the native cursor otherwise.
+
+### Verification
+- Source-level checks completed; manual preference-toggle and assistive-technology checks remain outstanding.
+- CI for this change is pending. Changes remain on PR #3 and have not been deployed.
+
+---
+
 ## [0.7.4] — Mobile Navigation Target — 2026-11-17
 
 ### Improved
