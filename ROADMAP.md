@@ -83,13 +83,16 @@ Maintenance may include:
 
 Manual browser smoke testing of the currently deployed GitHub Pages build confirmed rendering, customer list visibility, search, health filtering, and in-session status updates, with no visible console or network errors. A status edit reverted after reload on that deployed build. PR #3 remains unmerged, so the updated storage-validation code has not yet been deployed and its persistence behavior is not verified live. Mobile/tablet coverage beyond the browser session, keyboard-only interaction, and rendered contrast review remain pending.
 
-## Current PR Review State — 2026-11-12
+## Current PR Review State — 2026-11-17
 
-- PR #3 is open, draft, and mergeable; its latest head commit is `7b0a5f6`.
-- GitHub Actions run #24 passed the 11 unit tests, lint, and production build for that commit.
-- No submitted PR reviews or inline review threads were present at the time of review.
+- PR #3 remains open; it has not been merged or deployed.
+- The branch is 65 commits ahead of `main` and 0 commits behind; the comparison reports 14 changed files. The long commit history is a reviewability consideration, not by itself a code defect.
+- No submitted PR reviews or inline review threads were present at the latest check.
+- GitHub Actions run #40 passed all 11 unit tests, lint, and production build on the preceding contrast-refinement commit (`2e3c5e0`). The later mobile touch-target change and documentation synchronization require a fresh CI result.
+- Source review raised small secondary text to `text-neutral-400` and increased the mobile navigation toggle to 44 × 44 CSS pixels.
+- Screen-reader testing and physical-device touch testing remain outstanding. Branch-specific browser verification still requires an approved deployment.
 - The next gated milestone is human review and approval. Do not mark the PR ready, merge it, or deploy it without explicit approval.
-- After an approved merge/deployment, perform branch-specific browser checks for persistence, malformed saved data, and storage write failures.
+- After an approved deployment, repeat browser checks for persistence, malformed saved data, storage write failures, responsive layout, keyboard behavior, and rendered contrast.
 
 ## Guiding Principle
 
@@ -99,7 +102,7 @@ The current milestone is complete. Further development is optional, not an outst
 
 ---
 
-Review date: 2026-11-12
+Review date: 2026-11-17
 
 ## Current direction — 2026-11-12
 
