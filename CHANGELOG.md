@@ -1,3 +1,14 @@
+## [0.7.4] — Mobile Navigation Target — 2026-11-17
+
+### Improved
+- Increased the mobile navigation toggle target from 40 × 40 to 44 × 44 CSS pixels.
+
+### Verification
+- Source-level sizing checked; physical-device touch testing remains outstanding.
+- Change is on the existing PR #3 branch and has not been deployed.
+
+---
+
 ## [0.7.3] — Secondary Text Contrast Refinement — 2026-11-17
 
 ### Improved
