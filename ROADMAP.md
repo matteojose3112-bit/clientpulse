@@ -127,7 +127,10 @@ The live audit tested the currently deployed version. The improvements above are
 - [x] Raise remaining small secondary text from `text-neutral-500` to `text-neutral-400` across the application and dashboard components.
 - [x] Raise the custom section-label text color to the matching neutral value.
 - [ ] Measure rendered contrast ratios for all text/background combinations at runtime.
-- [ ] Complete NVDA/VoiceOver screen-reader checks and mobile touch-target measurements.
+- [x] Increase the mobile navigation toggle to a 44 × 44 CSS-pixel target; confirm mobile nav links and primary CTAs have padded hit areas.
+- [ ] Complete NVDA/VoiceOver screen-reader checks and physical-device touch-target measurements.
 - [ ] After explicit deployment approval, repeat browser checks against the updated PR branch.
 
 The source-token adjustment improves contrast on the near-black interface, but it is not a claim of full WCAG conformance. Manual rendered verification remains outstanding.
+
+Source inspection confirms the mobile menu toggle is 44 × 44 CSS pixels. This does not replace physical-device testing of spacing and touch behavior.
