@@ -151,3 +151,11 @@ The next development stage will focus on deeper customer-success workflow and ri
 - Refreshed the README and roadmap to reaffirm the deployed frontend-only MVP boundary.
 - Reconfirmed that customer/activity data is illustrative and persistence is browser-local.
 - Kept backend, multi-user, CRM, and automation concepts explicitly deferred rather than implying they are implemented.
+
+
+## Documentation maintenance — 2026-11-27
+
+- Reaffirmed the deployed frontend-only MVP and maintenance-mode scope in the README and roadmap.
+- Clarified that customer/activity data is illustrative and browser-local edits do not synchronize across users or devices.
+- Older forward-looking “Next” sections are historical release notes; the current roadmap closeout supersedes them. Deferred backend, CRM, workflow and automation ideas are not current MVP commitments.
+- No application code or deployment configuration changed.
