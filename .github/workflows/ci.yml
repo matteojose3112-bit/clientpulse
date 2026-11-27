@@ -1,4 +1,4 @@
-name: CI
+name: CI and dependency security
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   quality:
@@ -16,6 +16,8 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref }}
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -25,6 +27,23 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Apply compatible dependency security updates
+        run: npm audit fix
+
+      - name: Commit updated lockfile to this PR branch
+        if: github.event_name == 'pull_request' && github.actor != 'github-actions[bot]'
+        run: |
+          if ! git diff --quiet -- package-lock.json; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git add package-lock.json
+            git commit -m 'security(deps): update vulnerable npm packages'
+            git push origin "HEAD:${GITHUB_HEAD_REF}"
+          fi
+
+      - name: Audit dependencies
+        run: npm audit --audit-level=high
 
       - name: Lint
         run: npm run lint
