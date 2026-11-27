@@ -233,6 +233,8 @@ html {
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  body, a, button { cursor: auto; }
+  .pulse-cursor-dot, .pulse-cursor-ring { display: none; }
   .pulse-reveal, .pulse-status-dot { animation: none; }
   .pulse-scroll-reveal { opacity: 1; transform: none; transition: none; }
   .pulse-button::before { display: none; }
