@@ -128,6 +128,8 @@ function Navbar() {
 
       <div
         id="mobile-menu"
+        aria-hidden={!menuOpen}
+        inert={!menuOpen}
         className={`border-t border-white/10 bg-[#050505]/95 backdrop-blur-xl transition-all duration-300 md:hidden ${
           menuOpen
             ? "max-h-[30rem] opacity-100"
