@@ -90,3 +90,8 @@ Review date: 2026-11-03
 ## Current direction — 2026-11-03
 
 **MVP complete · Maintenance mode.** No additional platform features are required for the current milestone. Prioritize defect fixes, dependency/CI maintenance, documentation accuracy, and manual browser/accessibility checks. Only reopen deferred backend or workflow ideas if a concrete use case justifies expanding beyond the frontend demonstration.
+
+
+## Maintenance review — 2026-11-27
+
+The frontend MVP milestone remains complete. Deferred customer workflows, predictive risk intelligence, backend/API, CRM integrations, automation, and analytics are optional expansion ideas—not unfinished requirements for the current MVP. Manual cross-device, keyboard-only and rendered-contrast checks remain unverified and should not be marked complete without testing.
