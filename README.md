@@ -74,3 +74,8 @@ Building practical software through hands-on learning, experimentation, and AI-a
 ## Documentation review — 2026-11-03
 
 Documentation review — 2026-11-03: ClientPulse remains a deployed, frontend-only MVP in maintenance mode. Its customer records and activity feed are illustrative; edits persist only in the current browser. No backend, authentication, multi-user sync, CRM integration, or automated risk prediction is claimed. Deferred ideas remain optional.
+
+
+## Documentation maintenance — 2026-11-27
+
+ClientPulse remains a completed, frontend-only MVP in maintenance mode. Customer records and the activity feed are illustrative; customer edits persist only in the current browser. No backend, authentication, multi-user synchronization, CRM integration, task workflow, or automated risk prediction is included. Further work is limited to concrete defects, dependency/CI maintenance, documentation accuracy, and verified accessibility improvements.
